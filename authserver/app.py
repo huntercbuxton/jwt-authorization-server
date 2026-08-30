@@ -6,17 +6,20 @@ from werkzeug.exceptions import BadRequest, Unauthorized, Forbidden, NotFound, U
 import authserver.header_util as header_util  
 import authserver.db as db 
 import uuid
+from authserver.log import setup_logger
 from datetime import timedelta, timezone
 import datetime 
-import jwt
-import logging
+import jwt 
+import json 
 
 app = Flask(__name__)
 CORS(app)
  
 app.config.from_object('authserver.config.DevelopmentConfig')
  
+setup_logger(app.logger)
  
+
 @app.before_request
 def validate_required_headers() -> None:  
     url_safe_exp = r"^[a-zA-Z0-9\-._~]+$"
@@ -28,7 +31,19 @@ def validate_required_headers() -> None:
     if not g.consumer_id in app.config['CONSUMER_WHITELIST']: 
         raise Forbidden(description=f"'{g.consumer_id}' is not authorized to access this service")
 
-    
+@app.before_request
+def log_request() -> None: 
+    body = request.get_json() if request.is_json else None
+    app.logger.info(f'REQUEST RECIEVED: {json.dumps({ 'path': request.path, 'headers': dict(request.headers), 'body': body }, indent=4)}')
+
+@app.after_request
+def logAfterRequest(response: Response) -> Response: 
+    response.direct_passthrough = False
+    body_data = response.get_json() if response.is_json else None
+    app.logger.info(f'RESPONSE SENT: {json.dumps({ 'path': request.path, 'headers': dict(response.headers), 'body': body_data }, indent=4)}')
+    return response
+ 
+
 @app.route("/generate", methods=["POST"]) 
 @validate()
 def generate_tokens(body: GenerateJWTRequest): 
@@ -47,7 +62,6 @@ def generate_tokens(body: GenerateJWTRequest):
         raise BadRequest(description=f"requested timeout cannot be greater than {app.config['ACCESS_TIMEOUT']}")
  
     for x in body.aud_values():
-        print(f"aud {x} to be authorized")
         if x not in app.config['AUDIENCE_WHITELIST']:
             raise Unauthorized(description=f"{x} is not a recognized audience")
         if x not in user_account['approved_aud']:
@@ -86,7 +100,6 @@ def generate_tokens(body: GenerateJWTRequest):
 @header_util.authenticate_bearer
 def refresh_tokens(): 
     g.auth_ts = datetime.datetime.now(timezone.utc)
-    print(f"refresh {g.token_payload=}")
     token_record = db.get_refresh_token(g.token)
     # TODO: best practice is to authenticate the client via client_secret_basic,  private_key_jwt or similar
     if not token_record:
@@ -99,7 +112,6 @@ def refresh_tokens():
         raise Unauthorized(description=f"Client {g.consumer_id} not authorized to use this token")
 
     updated_record = db.update_used_refresh_token(g.token)
-    logging.debug(f"updated used refresh_token record: {updated_record=}")
 
     updated_claims = g.token_payload.copy()
     updated_claims['iat'] = g.auth_ts
@@ -119,7 +131,6 @@ def refresh_tokens():
 @header_util.authenticate_bearer
 def revoke_refresh_token(): 
     g.auth_ts = datetime.datetime.now(timezone.utc) 
-    print(f"refresh {g.token_payload=}")
     token_record = db.get_refresh_token(g.token)
     # TODO: best practice is to authenticate the client via client_secret_basic,  private_key_jwt or similar
     if not token_record:

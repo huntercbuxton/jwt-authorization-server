@@ -1,0 +1,600 @@
+[2026-08-30 12:18:00,264] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+}
+[2026-08-30 12:18:45,395] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+}
+[2026-08-30 12:20:35,519] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+}
+[2026-08-30 12:20:36,618] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+}
+[2026-08-30 12:20:41,614] INFO in app: REQUEST RECIEVED: {
+    "path": "/refresh",
+    "body": "placeholder"
+}
+[2026-08-30 12:20:44,161] INFO in app: REQUEST RECIEVED: {
+    "path": "/revoke",
+    "body": "placeholder"
+}
+[2026-08-30 12:22:07,964] INFO in app: REQUEST RECIEVED: {
+    "path": "/revoke",
+    "body": "placeholder"
+}
+[2026-08-30 12:22:12,141] INFO in app: REQUEST RECIEVED: {
+    "path": "/refresh",
+    "body": "placeholder"
+}
+[2026-08-30 12:22:14,383] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+}
+[2026-08-30 12:24:03,801] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+}
+[2026-08-30 12:24:04,044] INFO in app: aud projectservice to be authorized
+[2026-08-30 12:24:04,044] INFO in app: aud crochetedly to be authorized
+[2026-08-30 12:24:13,566] INFO in app: REQUEST RECIEVED: {
+    "path": "/refresh",
+    "body": "placeholder"
+}
+[2026-08-30 12:24:13,566] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': 'ca17f0e5-ec76-4cb2-8a3a-2e741bca95fa', 'iat': 1788114244, 'exp': 1788287044, 'nbf': 1788114244, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'}
+[2026-08-30 12:24:14,187] INFO in app: updated used refresh_token record: updated_record=RealDictRow({'uuid': 'e9080793-d23b-4b92-8bea-85996cfb88e3', 'username': 'tootles', 'refresh_token': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJjYTE3ZjBlNS1lYzc2LTRjYjItOGEzYS0yZTc0MWJjYTk1ZmEiLCJpYXQiOjE3ODgxMTQyNDQsImV4cCI6MTc4ODI4NzA0NCwibmJmIjoxNzg4MTE0MjQ0LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.jGI-KthuBREiqV2A0nrF_Ax4XwyP-IvcQ9jtIeFB7KBZRP9Bz0dKw6_ujPzbGSrs9SordPECtFGmK10BAkEBoUoUUARjQt8zlmWmk8sSUjh_Xt4SdujoaXomLqAwmxPtZDqPndIECbCeEE_BPBLg1us-duPhaSepyLG2xq31CohNuzwx0M9xVTVcrcfPoeBI3d2eTnlWeTJI6yPXOt_EQPCRX9Ch3n4oxd9p5WP-W0pB9pvQ2y5cHi5TzJt9IZmQjSVY06hQ1bl8fGPp3ZkcRz1PX17OY9zxZ4UWnloiD4odcvdZuwpQTBM_rkpaWXnRsaUs_Glhii85f_tEDSk6O_nuu9Sxb78liLJ2-KhgrUlGjtiDgGbCgCDjqdMneOqZzUCyExs6CFRuI8P3cyzUPdrY96pFoMmYBbtKJM2hUGVIQ-kSu_-po4RUuupJkXQIulFr2hBwvnITNqrf4p0ZzTBWRntdKSKKLWZdpzxcTsybjVQ5OisjLx736teupuLS', 'used': True, 'revoked': False, 'created_at': datetime.datetime(2026, 8, 30, 18, 24, 4, 233615), 'client_id': 'crochetedly'})
+[2026-08-30 12:24:25,132] INFO in app: REQUEST RECIEVED: {
+    "path": "/revoke",
+    "body": "placeholder"
+}
+[2026-08-30 12:24:25,133] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': '37c59132-d941-4fcf-8527-f93ba8df5c49', 'iat': 1788114253, 'exp': 1788287053, 'nbf': 1788114253, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'}
+[2026-08-30 12:27:12,080] INFO in app: REQUEST RECIEVED: {
+    "path": "/revoke",
+    "body": "placeholder"
+} z
+ {'trace_id': 'tracking-revocation', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/revoke'} 
+[2026-08-30 12:27:12,081] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': '37c59132-d941-4fcf-8527-f93ba8df5c49', 'iat': 1788114253, 'exp': 1788287053, 'nbf': 1788114253, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'} 
+ {'trace_id': 'tracking-revocation', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/revoke'} 
+[2026-08-30 12:27:14,436] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:27:14,695] INFO in app: aud projectservice to be authorized 
+ {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:27:14,695] INFO in app: aud crochetedly to be authorized 
+ {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:27:22,593] INFO in app: REQUEST RECIEVED: {
+    "path": "/revoke",
+    "body": "placeholder"
+} 
+ {'trace_id': 'tracking-revocation', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/revoke'} 
+[2026-08-30 12:27:22,593] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': '0b98c35d-7b41-4114-bdfb-7624e109b56d', 'iat': 1788114434, 'exp': 1788287234, 'nbf': 1788114434, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'} 
+ {'trace_id': 'tracking-revocation', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/revoke'} 
+[2026-08-30 12:29:42,463] INFO in app: REQUEST RECIEVED: {
+    "path": "/revoke",
+    "body": "placeholder"
+} 
+ {'trace_id': 'tracking-revocation', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/revoke'} 
+[2026-08-30 12:29:42,464] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': '0b98c35d-7b41-4114-bdfb-7624e109b56d', 'iat': 1788114434, 'exp': 1788287234, 'nbf': 1788114434, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'} 
+ {'trace_id': 'tracking-revocation', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/revoke'} 
+[2026-08-30 12:29:45,825] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:29:46,088] INFO in app: aud projectservice to be authorized 
+ {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:29:46,088] INFO in app: aud crochetedly to be authorized 
+ {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:29:48,490] INFO in app: REQUEST RECIEVED: {
+    "path": "/refresh",
+    "body": "placeholder"
+} 
+ {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 12:29:48,491] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': 'ca17f0e5-ec76-4cb2-8a3a-2e741bca95fa', 'iat': 1788114244, 'exp': 1788287044, 'nbf': 1788114244, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'} 
+ {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 12:30:02,096] INFO in app: REQUEST RECIEVED: {
+    "path": "/refresh",
+    "body": "placeholder"
+} 
+ {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 12:30:02,096] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': '9ee7c6da-275b-45ae-8c4c-c3f1b0408655', 'iat': 1788114586, 'exp': 1788287386, 'nbf': 1788114586, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'} 
+ {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 12:30:02,641] INFO in app: updated used refresh_token record: updated_record=RealDictRow({'uuid': '449fec54-b53e-4117-acc8-b1ca3149844d', 'username': 'tootles', 'refresh_token': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI5ZWU3YzZkYS0yNzViLTQ1YWUtOGM0Yy1jM2YxYjA0MDg2NTUiLCJpYXQiOjE3ODgxMTQ1ODYsImV4cCI6MTc4ODI4NzM4NiwibmJmIjoxNzg4MTE0NTg2LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Hj4cj0daoIkvADT2cdJcTM5wC7F5jVFI_r09U85h9PKbXHw7AnwO0dglEZ5A8zYFv5ySFOOm0txyKF620vF7AVweOdLDxDoub1mmnTqMOuBexpza4ub-u3jCTjEKsS8TaMl5xD5-E_3oqcMHGScNTfCpS50B22qNuaPB9X8JmIaf4FlzHi5i-ribA0qmYK8cV5AJHakwv0CS_bAeeAP0T-UuFlb1IlmAeGjgxn5KGYeVxFHyUQnoZ4oMMNvwqyOD4zZjSee_lzcCSFYgGz3ic7JZzDEjcJRnZaKLx32p2yAzvvPIS8HIBCow945hr_3UEgq8tnAurG2TKWZkoO3euQfIlaLUKtpXMvKI-1sXuaRJlJTElbQvQiYCh3kBOz7c0tSReuUu5xNlT2Ykdaywd80ltrQih8_Bf5ukTwUiUZWIooG2nu_Xem5Jq2a6peelDivVAysTzvwIXoaen3Bl6kjMUOYRGKmg2b34Gy1F2Q5ZZOMYXjKooFaES5g2rVXU', 'used': True, 'revoked': False, 'created_at': datetime.datetime(2026, 8, 30, 18, 29, 46, 286975), 'client_id': 'crochetedly'}) 
+ {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 12:45:04,680] INFO in app: REQUEST RECIEVED: {
+    "path": "/refresh",
+    "body": "placeholder"
+} 
+ request_data = {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 12:45:04,681] INFO in app: refresh g.token_payload={'sub': 'tootles', 'aud': ['projectservice', 'crochetedly'], 'iss': 'authservice', 'jti': '9ee7c6da-275b-45ae-8c4c-c3f1b0408655', 'iat': 1788114586, 'exp': 1788287386, 'nbf': 1788114586, 'projects': ['crochetedly'], 'admin': False, 'fooNum': 123, 'fooStr': 'blah'} 
+ request_data = {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 12:45:07,803] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:45:08,055] INFO in app: aud projectservice to be authorized 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:45:08,055] INFO in app: aud crochetedly to be authorized 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:45:19,733] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:45:19,988] INFO in app: aud projectservice to be authorized 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:45:19,989] INFO in app: aud crochetedly to be authorized 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:48:00,614] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:48:00,868] INFO in app: aud projectservice to be authorized 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:48:00,868] INFO in app: aud crochetedly to be authorized 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:48:20,618] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:48:20,831] INFO in db: Exiting DB connection context with postgres error SQLSTATE code: 42703. Any transactions may be rolled back. context_msg='searching user account records by username' 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:54:48,244] ERROR in app: Exception on /generate [POST] 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                                                    ^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/authserver/app.py", line 37, in log_request
+    app.logger.info(f'REQUEST RECIEVED: {json.dumps({ 'path': request.path, 'headers': request.headers, 'body': body }, indent=4)}')
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type EnvironHeaders is not JSON serializable
+[2026-08-30 12:55:44,124] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788116144123",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:59:06,552] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788116346550",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:59:07,074] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI0ZjNmOWIwZi05M2MyLTRjNDktYTY3Yy1jMjg1N2VjOGRjYWYiLCJpYXQiOjE3ODgxMTYzNDYsImV4cCI6MTc4ODExODE0NiwibmJmIjoxNzg4MTE2MzQ2LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.jjFelCVCapm16PPIUdiDwmo9OdquGSsqSVMTCoDgNSUbD-DdW9ZCZDdjbVPhtdQB4mG5QD5P-UtWqTMaKPpCi2V9xs9336F_0_VpgUjXMLkc4bL9yivYGyY1Fi2iuoY6glxWUTU2W0MYK4GMdhC8aqCwbE2Y9uGYnVOdbMMPjDpBNPSNhqTo2Ffr8bGrK3iRqyn_66Y0wNveSq5kK_epHX7t1OMFwF9KEi8lcSVF996hl6aFvALVwquMt5GYTZ6lw1-r4nO5j9R-nvd113OXXpVtvlwS88iyrIkDu2oN6pK3uhuzaUqbCO43U41LKPQ3IZlm5JJkl1dfHcBSzVdWEmTY-G1WfoDBloE9Ip64eVlKirPKEDey9ENL_Gp206M_0ZnOwXksz_Cjhy773rpEnaktn__oNdT8lK0WtZDtL0l4yyIh6bv0y02dcoJye4I1C4i8aUJisAkSup-v1LyfEW7SBkNSXaKoxfvBPnxDeRCBtPtg6IqQzMLMyErj2H5_",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJmOWViM2ZjYy0yMDQ5LTQ3ZTYtYTFhMy1iMDZkNThkZDE1YWUiLCJpYXQiOjE3ODgxMTYzNDYsImV4cCI6MTc4ODI4OTE0NiwibmJmIjoxNzg4MTE2MzQ2LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Wij-WWaA98xTN6KVgWobd7Go55bGtPsYqt4Nq8zNGnzBaQJvq6o0cWRIA8v4F8dS8DR3DOlE6ZJlCBJrT7mXb7SvMlGXNMs2_3sPICE6hbge0jjoXPM_yyH8dhBj6OISTLDy_idnUx-CB19Q4MN3sv-eKg59ho2o2out_KgSkUt0B_E-KASqF5ACbwEgNGPkQPm24Rs83vo30flYxaQn4j9w9G8_lYr9tRn8KA5mGWWgIktSBL5-S_U7j5rn-pppb1HeaCaHUAzOUHpGD7-e4u2juGgBDq-LZlVgvTWkN1AgL-cyP1dn4KxRnAvx4BBvr3v_QKChtKSxteaXZp0Sor5l7k0GaxGjUSj9h73QtUEW5KSb7ZOKJ1IJtXShX2CM5RcCDEaK66HT6-Tq8UQjLUvIBuReImBCUE-9qXiN8MugYqHE5C7223fGyHGKWmrs1tyCW9tnXpTOijVdPmsU89mc5GtluxlZJJu6hi8vgmNEeB2zoSQqfR-TS-Wi7bv2"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:59:07,074] ERROR in app: Exception on /generate [POST] 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 219, in cors_after_request
+    if resp.headers is not None and resp.headers.get(ACL_ORIGIN):
+       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'headers'
+[2026-08-30 12:59:07,075] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "265"
+    },
+    "body": null
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 12:59:07,076] ERROR in app: Request finalizing failed with an error while handling an error 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 219, in cors_after_request
+    if resp.headers is not None and resp.headers.get(ACL_ORIGIN):
+       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'headers'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 219, in cors_after_request
+    if resp.headers is not None and resp.headers.get(ACL_ORIGIN):
+       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'headers'
+[2026-08-30 13:02:28,695] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788116548693",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:02:29,205] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI2ZTBiNDcxMC04NTYzLTQwYmEtOTg5MS1hOTFkMzVhOWJlMGIiLCJpYXQiOjE3ODgxMTY1NDgsImV4cCI6MTc4ODExODM0OCwibmJmIjoxNzg4MTE2NTQ4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.k5ftXOeX_lnubT-W9b7Gz4CBEsFgE4cWHL3m8c2kh6FpyJSD6a6vwy2CuRAcpVUDlV79-hdSIHNHC4O7UsRDi6HJzDNFzP4eikoyzum0ZvurHl9G39lAlKvJ4fF-8Zw4pS0SXcnKkmhilw_hRgG8K_3U6bQ0HwyzAkSsJ5kHdpDo-1OESvBx2VraY6j-tRnstR-Y0NQleb2DP73V-MgOLx-5qdjBJ9xmcItBcY4Ye1epxu41u4YoUKrk9DL2Zj696dDUsiLZyfhXr8IKB7MeIp01uZzrKfcN4yaEGVJDRUk3hB934u5ZbTlPQIjAMXfyfFcIG_7J7CQve9S0xSA43NR3Ogb1aHtRN51emfYtodMNPB169ng6nK3TuxPLo8I513rJ4oWOHCmQPxO5RBSIR7hgBfkib9a5K9-wZmhTm6p2kr_oCOJjQei_m31HDFthJAvX1Wq0-5Tu_ZZSlxtMBw17MA-sJipdh6EhnD1LgEmjJWQtpCBoyrLvHoGLuOvo",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJhNTJhNmI5ZC1kODcyLTQxMDYtODA4OS03YTU3OGYzNGViOTciLCJpYXQiOjE3ODgxMTY1NDgsImV4cCI6MTc4ODI4OTM0OCwibmJmIjoxNzg4MTE2NTQ4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.CBUnf-RUUmKNEAB3rrXmUzXueyQGx4w4ftLAzDB7mw_anRMmg6l_Pn9lBAm308AyrSfsUAIntdcxXpBXvpXCX3DqMsMndt1xm7Bx61vfzCJyDfzhuQO3ng1SPpfrS_W92u64WOkNCwDA4Zg8ns1kAcCokjpqpHCW9eK73uniEmIyRya4EZOKzEPbkGzKthZ4oCK6IUc2Ik3CKdOmWV-rt5UTmVcpn9ApWrvS5IppkyuISwcmFwHYFDkg46wPaXUIGdeini16uYT75uZRZpGUrAVbpNa_q5EoWQetEuiCiTvfvzvKayGtjJSm2ElxbLWL7Wfb3qkdyr6FUYcUmi8v6bBbjUk3G9LFTb9Tn344iggpqIfQ2hVIjWM_Co2HOz6B3yOfWnW0HcR3N-iLLnTCUnql45m2DJR9vFZiJFaU8EzoisBEAkvbkYgCkGn-L4axlT-DsyuX05muKvCEWsNYO7NymIRFiF15x8fv0KETau13lS8dss3CRAvozdspr3_a"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:02:29,205] ERROR in app: Exception on /generate [POST] 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 219, in cors_after_request
+    if resp.headers is not None and resp.headers.get(ACL_ORIGIN):
+       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'headers'
+[2026-08-30 13:02:29,206] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "body": null
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:02:29,206] ERROR in app: Request finalizing failed with an error while handling an error 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 219, in cors_after_request
+    if resp.headers is not None and resp.headers.get(ACL_ORIGIN):
+       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'headers'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 219, in cors_after_request
+    if resp.headers is not None and resp.headers.get(ACL_ORIGIN):
+       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'headers'
+[2026-08-30 13:03:12,430] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788116592429",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:03:12,947] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIwMmNhYWVmOS1iOWZmLTRlZjAtODYyMi1lOTliYjcwYTgzOGIiLCJpYXQiOjE3ODgxMTY1OTIsImV4cCI6MTc4ODExODM5MiwibmJmIjoxNzg4MTE2NTkyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Kc8NpaRmZBnMx9A8y5B9sLrQonCyFcNhwPnXZilOufsJnK3NasaS8MTwpsPXCPxFWh6PUQN71m-YnjUmiFdO3VSvU53tkKRVmFJv9VNU1Db2SUT4RnqK3pz0_ovhUD9R6DuNEOb5cv-L217dsyJmzPhEKXD7XdLiuCH01g43w8JC226SKI11ztkD4CeT1tTm_FDtzDL3MM1qf0CwVQGAovHWqEdTrX1Ox1pkukjycrAGeyvyhc_zo7zVOfYKvJBgDWiHp39xKZGVdhX-8SLCVcah_FvRUzt0PUDRhl3gGCoKypGe_Aw17qYDD2PTFx5-I74_BmtoqjC6V49R-d-ht48zDhEwKCohangoudC6BFyVclGk0kSN9CvyPmp9U2lwXQZXjaTg4AtOCaL46wpDf_Bsqpb0Igdtf5GficRayBHWPa7c2sySX_JFmxHsxZvNqDbd0Riif8_PYYH9rHyIxgTgPMhCJ0cfGJdamYW5UIzENs5aKmgm5ynIU5NlZHBc",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJmMmZiNDhmMi1mOTVmLTRmMTItYjdiMi1lYTJhNTI2ZDk4OTAiLCJpYXQiOjE3ODgxMTY1OTIsImV4cCI6MTc4ODI4OTM5MiwibmJmIjoxNzg4MTE2NTkyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.axMZB0xkExMgnPyYQEF4Jc4SOnPoVmxmEbmQavN4HSGK3uOoHdoO2gk5GnbwVBt1cLYWs4YG8rO9d_t8CBRg0gGB8H-zH3r06GVzTvIF_EBn9QfPi4GuYTgDQa0mCUY8Ckqq4t6GhcmLjLfshBaWz7hZ26MOAoBFjyHnGpBB85H8rMGtDaWYhdnPMGvciojVlyIZ1AJTEvCrLIa9p3rBCHKSIS-Tv8jY4sAsauwd5LJhs6SIutlQzdcoE1FLn8O_Xbneb-ezBoq_VrCMmNc2EdN50jiUkwFoCmtZeaAUqvOm2GOulRQVWmJvwuMdl9iCPF-CqViOcsQSPkhdxA3kWOpOPMpblBfR_Qz-2H0e83m_a2LS6OVWee-NlhDfnNEHAJtJRxOo1jVBMrHsII9qV7yUrQkcVWLfWyRW_k6LC86WD5_tSZZkcDwx-evxgS8hktdr-eVdSHPANM4IHMu34TqOi-4W6bdVWvYYIsXaPbS2xWHq-0BcyV9LJOZbbkxj"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 

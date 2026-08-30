@@ -1,23 +1,14 @@
-from flask import current_app
+from flask import current_app, g, request
 import psycopg2
-from psycopg2.extras import DictCursor
-import logging
+from psycopg2.extras import DictCursor 
 from authserver.exceptions import AppError
 from contextlib import contextmanager
+from authserver.log import setup_logger
+import logging
 
-def connect_db():
-    try:
-        conn = psycopg2.connect(dbname=current_app.config['DB_NAME'],
-                                user=current_app.config['DB_USER'],
-                                password=current_app.config['DB_PASSWORD'],
-                                host=current_app.config['DB_HOST'],
-                                port=current_app.config['DB_PORT'])
-    except psycopg2.errors.OperationalError as err:
-        logging.critical("failed to connect to the database; check connection params and server availability")
-        raise Exception("failed to connect to database") from err
-    else:
-        return conn
-
+logger = logging.getLogger(__name__)
+setup_logger(logger)
+ 
 @contextmanager
 def connect_db(context_msg=None): 
     try:
@@ -29,11 +20,11 @@ def connect_db(context_msg=None):
         yield conn
         conn.commit()
     except psycopg2.Error as e: 
-        print(f"Exiting DB connection context with postgres error SQLSTATE code: {e.pgcode}. Any transactions may be rolled back. {context_msg=}")
+        logger.info(f"Exiting DB connection context with postgres error SQLSTATE code: {e.pgcode}. Any transactions may be rolled back. {context_msg=}")
         conn.rollback()
         raise AppError(description="Database error")
     except Exception:
-        print(f"Exiting DB connection context with error. Any transactions may be rolled back. {context_msg=}")
+        logger.info(f"Exiting DB connection context with error. Any transactions may be rolled back. {context_msg=}")
         conn.rollback()
         raise AppError(description="Database error")
     finally: 
