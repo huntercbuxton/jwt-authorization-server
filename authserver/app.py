@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request, g, Response
 from flask_cors import CORS
 from flask_pydantic import validate
-from authserver.model import GenerateJWTRequest, AuthJwts
-from werkzeug.exceptions import BadRequest, Unauthorized, Forbidden, NotFound, UnsupportedMediaType
+from authserver.model import GenerateJWTRequest, AuthJwts, ResponseDTO, ResponseStatus
+from werkzeug.exceptions import BadRequest, Unauthorized, InternalServerError, Forbidden, NotFound, UnsupportedMediaType
 import authserver.header_util as header_util  
 import authserver.db as db 
 import uuid
@@ -18,7 +18,6 @@ CORS(app)
 app.config.from_object('authserver.config.DevelopmentConfig')
  
 setup_logger(app.logger)
- 
 
 @app.before_request
 def validate_required_headers() -> None:  
@@ -43,6 +42,22 @@ def logAfterRequest(response: Response) -> Response:
     app.logger.info(f'RESPONSE SENT: {json.dumps({ 'path': request.path, 'headers': dict(response.headers), 'body': body_data }, indent=4)}')
     return response
  
+@app.errorhandler(UnsupportedMediaType)
+@app.errorhandler(NotFound)
+@app.errorhandler(Forbidden)
+@app.errorhandler(Unauthorized)
+@app.errorhandler(BadRequest)
+@app.errorhandler(InternalServerError)
+def handle_unauthorized_exc(e):
+    app.logger.error(f"Mapping http {type(e).__name__ } exception class to error response", exc_info=True)
+    return ResponseDTO.from_httpexception(e).model_dump(), e.code 
+    # return { "description": e.description, "code": e.code }, e.code  
+
+@app.errorhandler(Exception)
+def fallback_exception_handler(e):
+    app.logger.error("Mapping exception to error response", exc_info=True)
+    # return { "description": "Unhandled exception", }, 500 
+    return ResponseDTO(message="Unhandled exception", code=500, status=ResponseStatus.ERROR), 500
 
 @app.route("/generate", methods=["POST"]) 
 @validate()
@@ -143,4 +158,4 @@ def revoke_refresh_token():
         raise Unauthorized(description=f"Client {g.consumer_id} not authorized to use this token")
 
     db.update_revoked_refresh_token(g.token)
-    return jsonify({ "msg": "revocation success" })
+    return jsonify(ResponseDTO(message="refresh token revocation completed", status=ResponseStatus.SUCCESS).model_dump())

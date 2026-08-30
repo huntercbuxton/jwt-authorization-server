@@ -1,6 +1,8 @@
 from pydantic import BaseModel, Field, StrictBool, field_validator, PositiveInt, FutureDatetime
 from typing import List, Any, Dict, Optional, Annotated 
 from collections import namedtuple
+from enum import Enum 
+
 
 NonBlankPatternString = Annotated[str, Field( min_length=1, pattern=r'\S+')]
  
@@ -25,5 +27,18 @@ class GenerateJWTRequest(BaseModel):
     def aud_values(self):
         return [ self.aud ] if isinstance(self.aud, str) else self.aud
 
+class ResponseStatus(str, Enum):
+    SUCCESS = 'SUCCESS'
+    ERROR = 'ERROR'
+class ResponseDTO(BaseModel):
+    status: ResponseStatus
+    message: str 
+    code: str | int | None = None
+
+    @classmethod 
+    def from_httpexception(cls, e):
+        return cls(message=e.description, code=e.code, status=ResponseStatus.ERROR)
+
+ 
  
 AuthJwts = namedtuple("AuthJwts", "access_token refresh_token")

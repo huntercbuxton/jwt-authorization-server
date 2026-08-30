@@ -11,8 +11,8 @@ class TrackingFilter(logging.Filter):
     def filter(self, record): 
         request_context = {  }
         if g:
-            request_context['trace_id'] = g.trace_id
-            request_context['consumer_id'] = g.consumer_id
+            request_context['trace_id'] = getattr(g, "trace_id", None)
+            request_context['consumer_id'] = getattr(g, "consumer_id", None)
         if request:
             request_context['url'] = request.url 
         record.request_data = request_context
