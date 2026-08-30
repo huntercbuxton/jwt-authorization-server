@@ -1,18 +1,29 @@
-from pydantic import BaseModel, EmailStr, Field, StrictBool, FutureDatetime
+from pydantic import BaseModel, Field, StrictBool, field_validator, PositiveInt, FutureDatetime
 from typing import List, Dict, Optional, Annotated 
+from collections import namedtuple
 
 NonBlankPatternString = Annotated[str, Field( min_length=1, pattern=r'\S+')]
-
-class HBNSClaims(BaseModel):
-    admin: StrictBool | None = False 
-    projects: List[str] | None = Field(description="list of projects for with access is requested", default=[])
-
+ 
 class GenerateJWTRequest(BaseModel):
     """Model for validating token claims request data"""
-    aud: str | List[str] | None = Field([], description="list of audiences pre-approved for the user")
-    nbf: FutureDatetime | None = Field(description="(Optional) custom nbf value.", default=None)
-    timeout: int | None = Field(description="(Optional) The time between nbf and exp", gt=10, lt=1441, default=None) 
-    hbns_claims: HBNSClaims = Field(description="Claims required by HBNS platform service")
-    custom_claims: Dict | None = Field(description="(Optional) custom claims defined by the client", default=None)
+    aud: str | List[str] = Field(description="list of audiences the user will access")
+    timeout: PositiveInt | None = Field(description="(Optional) requested lifespan of the access token", default=None)
+    admin: StrictBool = False 
+    projects: List[str] = Field(description="list of projects for with access is requested", default=[])
+    custom_claims: Dict[str, str] = Field(description="(Optional) custom claims defined by the client", default={})
 
+    @field_validator("custom_claims")
+    @classmethod
+    def validate_custom_claims(cls, value: str) -> str: 
+        for key in value:
+            if key in ['aud', 'exp', 'iss', 'iat', 'jti', 'sub', 'nbf']:
+                raise ValueError(f"Invalid key '{key}' in custom_claims. Reserved claims are not allowed.") 
+            if key in [ 'admin', 'projects', 'client_id' ]: 
+                raise ValueError(f"Invalid key '{key}' in custom_claims. Conflicts with the authorization server schema are not allowed.") 
+        return value
+    
+    def aud_values(self):
+        return [ self.aud ] if isinstance(self.aud, str) else self.aud
 
+ 
+AuthJwts = namedtuple("AuthJwts", "access_token refresh_token")
