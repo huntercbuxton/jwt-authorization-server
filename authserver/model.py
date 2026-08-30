@@ -9,7 +9,7 @@ class HBNSClaims(BaseModel):
 
 class GenerateJWTRequest(BaseModel):
     """Model for validating token claims request data"""
-    aud: List[str] | None = Field([], description="list of audiences pre-approved for the user")
+    aud: str | List[str] | None = Field([], description="list of audiences pre-approved for the user")
     nbf: FutureDatetime | None = Field(description="(Optional) custom nbf value.", default=None)
     timeout: int | None = Field(description="(Optional) The time between nbf and exp", gt=10, lt=1441, default=None) 
     hbns_claims: HBNSClaims = Field(description="Claims required by HBNS platform service")

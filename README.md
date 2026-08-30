@@ -58,7 +58,7 @@ The default value in the __application.yml__ file is set to connect to EGO runni
 ### Run Local
 
 ```bash
-$ mvn spring-boot:run
+flask --app authserver.app run --port 8011
 ```
 
 Application will run by default on port `1234`
@@ -70,7 +70,7 @@ Configure the port by changing `server.port` in __application.yml__
 First build the image:
 
 ```bash
-$ docker-compose build
+docker-compose build
 ```
 
 When ready, run it:
