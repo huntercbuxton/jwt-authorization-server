@@ -39,6 +39,7 @@ class Config:
     JWT_ISSUER = os.environ.get('JWT_ISSUER') 
     ACCESS_TIMEOUT = 30 # 30 minutes after issue 
     REFRESH_TIMEOUT = 2880  # 2 days after issue
+ 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     

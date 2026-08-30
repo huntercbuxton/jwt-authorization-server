@@ -1,10 +1,9 @@
 import logging
 from flask import  request, g
 from logging.handlers import RotatingFileHandler
-
+import os
  
 
- # 1. Define the log formatting structure
 log_formatter = logging.Formatter('[%(asctime)s] %(levelname)s in %(module)s: %(message)s \n request_data = %(request_data)s ')
 
 class TrackingFilter(logging.Filter):
@@ -17,9 +16,12 @@ class TrackingFilter(logging.Filter):
             request_context['url'] = request.url 
         record.request_data = request_context
         return True
+
 def setup_logger(logger): 
-    
-    file_handler = RotatingFileHandler('test.log', maxBytes=1024 * 1024, backupCount=3)
+
+    LOG_FILE = os.environ.get('LOG_FILE') or "authserver.log"
+
+    file_handler = RotatingFileHandler(LOG_FILE, maxBytes=1024 * 1024, backupCount=3, mode="w")
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(log_formatter)
     file_handler.addFilter(TrackingFilter()) 
