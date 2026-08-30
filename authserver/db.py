@@ -48,4 +48,33 @@ def find_account_by_username(username: str) -> dict:
             """
             cursor.execute(query, (current_app.config['DB_ENCRYPTION_PASSWORD'], username))
             return cursor.fetchone()
+
+
+def add_refresh_token(username, token, client_id):
+    with connect_db("adding refresh token to db") as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cursor: 
+            query = "INSERT INTO refresh_tokens ( username, refresh_token, used, client_id ) values (%s, %s, FALSE, %s) RETURNING *;"
+            cursor.execute(query, (username, token, client_id))
+            result = cursor.fetchone()
+             
+def get_refresh_token(token):
+    with connect_db("getting refresh token record from db") as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cursor: 
+            query = "SELECT * FROM refresh_tokens WHERE refresh_token = %s;"
+            cursor.execute(query, (token,))
+            return cursor.fetchone()
+
+def update_used_refresh_token(token):
+    with connect_db("updating used refreshe token in db") as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cursor: 
+            query = "UPDATE refresh_tokens SET used=TRUE where refresh_token=%s RETURNING *;"
+            cursor.execute(query, (token,))
+            return cursor.fetchone()
+        
+def update_revoked_refresh_token(token):
+    with connect_db("updating revoked refresh token in db") as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cursor: 
+            query = "UPDATE refresh_tokens SET revoked=TRUE where refresh_token=%s RETURNING *;"
+            cursor.execute(query, (token,))
+            return cursor.fetchone()
  

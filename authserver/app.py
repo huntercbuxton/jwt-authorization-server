@@ -4,12 +4,12 @@ from flask_pydantic import validate
 from authserver.model import GenerateJWTRequest, AuthJwts
 from werkzeug.exceptions import BadRequest, Unauthorized, Forbidden, NotFound, UnsupportedMediaType
 import authserver.header_util as header_util  
-import authserver.db as db
-import authserver.permission_checks as permission_checks
+import authserver.db as db 
 import uuid
 from datetime import timedelta, timezone
 import datetime 
 import jwt
+import logging
 
 app = Flask(__name__)
 CORS(app)
@@ -32,8 +32,7 @@ def validate_required_headers() -> None:
 @app.route("/generate", methods=["POST"]) 
 @validate()
 def generate_tokens(body: GenerateJWTRequest): 
-    g.username, g.password = header_util.validate_basicauth_header()
-    # print(f"{g.username=}\n{g.password=}")
+    g.username, g.password = header_util.validate_basicauth_header() 
     user_account = db.find_account_by_username(g.username)
 
     if not user_account or not user_account['password'] == g.password:
@@ -60,8 +59,6 @@ def generate_tokens(body: GenerateJWTRequest):
     for p in body.projects:
         if not p in user_account['projects']:
             raise Unauthorized(description=f"User is not authorized for project '{p}'")
-
-    permission_checks.validate_custom_claims(body.custom_claims)
  
     claims = {
         'sub': g.username,
@@ -70,8 +67,7 @@ def generate_tokens(body: GenerateJWTRequest):
         'jti': str(uuid.uuid4()), 
         'iat': g.auth_ts,
         'exp': g.auth_ts + timedelta(minutes=body.timeout or app.config['ACCESS_TIMEOUT']),
-        'nbf': g.auth_ts,
-        'client_id': g.consumer_id,
+        'nbf': g.auth_ts, 
         'projects': body.projects,
         'admin': body.admin,
     }
@@ -80,22 +76,60 @@ def generate_tokens(body: GenerateJWTRequest):
     access_token = jwt.encode(payload=claims, key=app.config['PRIVATE_KEY'], algorithm="RS256")
 
     claims['exp'] = claims['iat'] + timedelta(minutes=app.config['REFRESH_TIMEOUT'])
+    claims['jti'] = str(uuid.uuid4())  
     refresh_token = jwt.encode(payload=claims, key=app.config['PRIVATE_KEY'], algorithm="RS256")
-
+    db.add_refresh_token(g.username, refresh_token, g.consumer_id)
     return jsonify(AuthJwts(access_token, refresh_token)._asdict())
 
 
 @app.route("/refresh", methods=["POST"]) 
-def refresh_tokens():
-    g.token = header_util.validate_bearer_header()
-    print(f"{g.token}")
+@header_util.authenticate_bearer
+def refresh_tokens(): 
+    g.auth_ts = datetime.datetime.now(timezone.utc)
+    print(f"refresh {g.token_payload=}")
+    token_record = db.get_refresh_token(g.token)
+    # TODO: best practice is to authenticate the client via client_secret_basic,  private_key_jwt or similar
+    if not token_record:
+        raise Unauthorized(description=f"Token not registered")
+    if token_record['used']:
+        raise Unauthorized(description="Token has been used.")
+    if token_record['revoked']:
+        raise Unauthorized(description="Token has been revoked.")
+    if not token_record['client_id'] == g.consumer_id:
+        raise Unauthorized(description=f"Client {g.consumer_id} not authorized to use this token")
 
-    return jsonify({})
+    updated_record = db.update_used_refresh_token(g.token)
+    logging.debug(f"updated used refresh_token record: {updated_record=}")
 
+    updated_claims = g.token_payload.copy()
+    updated_claims['iat'] = g.auth_ts
+    updated_claims['exp'] = g.auth_ts + timedelta(minutes=app.config['ACCESS_TIMEOUT'])
+    updated_claims['nbf'] = g.auth_ts
+    updated_claims['jti'] = str(uuid.uuid4())
+    access_token = jwt.encode(payload=updated_claims, key=app.config['PRIVATE_KEY'], algorithm="RS256")
 
+    updated_claims['exp'] =  g.auth_ts + timedelta(minutes=app.config['REFRESH_TIMEOUT'])
+    updated_claims['jti'] = str(uuid.uuid4())
+    refresh_token = jwt.encode(payload=updated_claims, key=app.config['PRIVATE_KEY'], algorithm="RS256")
+    new_record = db.add_refresh_token(g.token_payload['sub'], refresh_token, g.consumer_id)
+    return jsonify(AuthJwts(access_token, refresh_token)._asdict())
+
+ 
 @app.route("/revoke", methods=["POST"]) 
-def revoke_tokens():
-    g.token = header_util.validate_bearer_header()
-    print(f"{g.token}")
-    return jsonify({})
+@header_util.authenticate_bearer
+def revoke_refresh_token(): 
+    g.auth_ts = datetime.datetime.now(timezone.utc) 
+    print(f"refresh {g.token_payload=}")
+    token_record = db.get_refresh_token(g.token)
+    # TODO: best practice is to authenticate the client via client_secret_basic,  private_key_jwt or similar
+    if not token_record:
+        raise Unauthorized(description=f"Token not registered")
+    if token_record['used']:
+        raise Unauthorized(description="Token has been used.")
+    if token_record['revoked']:
+        raise Unauthorized(description="Token has been revoked.")
+    if not token_record['client_id'] == g.consumer_id:
+        raise Unauthorized(description=f"Client {g.consumer_id} not authorized to use this token")
 
+    db.update_revoked_refresh_token(g.token)
+    return jsonify({ "msg": "revocation success" })
