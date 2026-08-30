@@ -2114,3 +2114,1706 @@ werkzeug.exceptions.Unauthorized: 401 Unauthorized: Token has been used.
     }
 } 
  request_data = {'trace_id': 'basicauth-bruno', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/refresh'} 
+[2026-08-30 13:47:23,409] ERROR in app: Mapping exception to error response 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1055, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1617, in _connect
+    raise err
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1601, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1169, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1081, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/strategies.py", line 157, in hit
+    self.storage.incr(
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/storage/base.py", line 25, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/storage/redis.py", line 224, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 10936, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 11294, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 11262, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/client.py", line 867, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/client.py", line 873, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 3273, in get_connection
+    connection.connect()
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1028, in connect
+    self.retry.call_with_retry(
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1029, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1077, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+[2026-08-30 13:47:23,411] ERROR in app: Exception on /generate [POST] 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1055, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1617, in _connect
+    raise err
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1601, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1169, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1081, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/strategies.py", line 157, in hit
+    self.storage.incr(
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/storage/base.py", line 25, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/storage/redis.py", line 224, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 10936, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 11294, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 11262, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/client.py", line 867, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/client.py", line 873, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 3273, in get_connection
+    connection.connect()
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1028, in connect
+    self.retry.call_with_retry(
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1029, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1077, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1249, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a ResponseDTO.
+[2026-08-30 13:47:23,411] ERROR in app: Mapping http InternalServerError exception class to error response 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1055, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1617, in _connect
+    raise err
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1601, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1169, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1081, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/strategies.py", line 157, in hit
+    self.storage.incr(
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/storage/base.py", line 25, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/limits/storage/redis.py", line 224, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 10936, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 11294, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/commands/core.py", line 11262, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/client.py", line 867, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/client.py", line 873, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 3273, in get_connection
+    connection.connect()
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1028, in connect
+    self.retry.call_with_retry(
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1029, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/redis/connection.py", line 1077, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1249, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a ResponseDTO.
+[2026-08-30 13:47:23,412] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "197"
+    },
+    "body": {
+        "code": 500,
+        "message": "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.",
+        "status": "ERROR"
+    }
+} 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:52,652] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119452649",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:53,169] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI0YTQ0Y2Q0Yi1mMzM5LTQ5YTctOWQ5MS0xYmRhZTM5NTRiZGYiLCJpYXQiOjE3ODgxMTk0NTIsImV4cCI6MTc4ODEyMTI1MiwibmJmIjoxNzg4MTE5NDUyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.IE-Cs022ar9a419YjuUBqmLfwONM4wg9eR5BAxioR5qd260W0MEjmAc6uJTmic4si1QPDjCu9mkNkxOfEPCxbVjjdNzN0n4DvtYiHT9e0CXX3aZZg0ahvwlIWn4bBMrwq4dbS1Izry-cDPIUtQqKnI7MhgizDjjNofbEzi6vBpFr0kFxMpz1xHozdlqky-dZ07DySaSinaxCzqnb5E7AIuhUeiRToVqmGoY-jCM_a5Ga2ZyAvXraLyCfRlmlAfuTceT-wwncuHN4l4zZpUqAYk5PTxL_bWDoWt9q0i2VqahdkFasfNhpXnqVxFvinI5tRFQlNs5xJ4OMps2DCedrh4B0QyY7UPyiKIkIZ9vUKFcmLsCRIPkEAAI6AMZVHs9xeTgbzw528-GEviw1LZ5ROLDAfOjVIG9GznUhTa9OL5PzCei4WAXmfoArwAYBSc_erNGQvHK08Q2bp1xYoLHohWuVWnDZWUFgxw3UkGeuP2Aido5PgUDo3ZObZmu4qnlv",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI3ZjEwNDk3Ny00ZTQzLTQ2YzUtYjUzNC1jYWFjYzJhMmFkMmMiLCJpYXQiOjE3ODgxMTk0NTIsImV4cCI6MTc4ODI5MjI1MiwibmJmIjoxNzg4MTE5NDUyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.IPfowE9SXBRR3stwhquwlfn4x5wAFz7BIWNYfr__Aq4__06NuaeCg8iCCI8o9tdtRav5drYvzvieaCxkYxmmvsITspFd1Skd5Xs0ytXeh6HqVTnZjMuEjEsdDegLpk9fquy957emhT0RWrX_JVDFagqUaqy38nfa6YDRKO-MBQ_1wTLPGHsuVhW18cgu-cE1eUAWnAQBc_X2kGZm9tBFgy4w7gRYEs93o0YrnE937QCd0D_J8MN9v0Ap1for2Ny9NBWvwApa3sNHKfGVYsrKKyuC60eoMM920q-83G9UEHjzQ-hy-XHkxvmWFksvZuIgUICBWy2bvnoyrCxHoqO-DM_RNVBnzoO8gti_VN8KUeNDynHWQDkBVkMWQrsxBxX6DOWTU0HUZb6MlwwJTEBXasH4OEwUXGLCeW2-wMrwzShjfKrFCHTi6f4j53IXnQuvExpAKnNxYQH26LkwRT-12DH-3MDmB1yM1RYGUBR1UHQd27ZuWmrQbH5jdYh9_ij8"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:54,589] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119454587",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:55,093] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIwNzAxZTQzYS1hZTAxLTRiOTQtYmNjOC03MzE3MmE4NTQ4ZWIiLCJpYXQiOjE3ODgxMTk0NTQsImV4cCI6MTc4ODEyMTI1NCwibmJmIjoxNzg4MTE5NDU0LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.lSN_xYOFu6KcKas_ugKh6o4tZVulEz4Ntayt98YugbBpCi-i4nnd0a-A8ucxDij7ZKMylAxyHzmpyvJLxTdl7GE0tIboR1WZB3b3sM8K7TPUCCnfYWqLbnJrhctyjLpiLn06cM0rPGuzNviU4S5RrvKOkaslSU8j63OfoIx2BzrlAqsx9PwSolMKfnEc2waSIVqVUoDuGQYxK2w24l25HriFW39AdrPQLAUDYIaGPje-BgKNUYFgIJX8okAUcBnDoSiFk2Q7fnEy-dPCiDbX0qXcCmoSEe3fN3vOL-oOFA6FE1crTVL-cXs7VmmZheD8uK-XMQCUTMgSjCBV3Ic7MLgm8tQZooEizkhyzFJmy7thVaqv5PrlS7lUlYKJkwQzA8cF9YmD2YzNWG63vWY3lLhH7Jt862gQa0kF_2X3HbDltcpINq0Pm8hzPxMvz7LJG0XwOlXw5_aU_3CjOQ_h5jvPWNXGD3lAbzDzgElgGs61NIJbyvMFg7nesC7Z7sHL",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJiNGFlYmM3MC1iYzJiLTRhYTEtODY5My0wMDgzNGUwMzliMTEiLCJpYXQiOjE3ODgxMTk0NTQsImV4cCI6MTc4ODI5MjI1NCwibmJmIjoxNzg4MTE5NDU0LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.IsBcLlsmjOFc2wAI5F1NPii69Slk30c3xbNB7DOmw4_SQruLo1G0PsICpP30g-ky7Dtaggsn-3XiLdgu7slNLo44xd0S6wxSrr_uPeHYVNC-4I4GS7qE1YIEk5jNthOimg3N3fZ5rqav4R7ZAcNaZL0RYDVgzAIKIkEP2a0abtv5WdtP13O6cuSC_8ot9CqF8WyexuLeEKiHhQgwHG0sczXKV0YosDPA_M8UqDxmx5qVjWn-aZPL2Va3m1BfeNuJyPdoDPXvptTLc7vm25tIAQzn96y7TxtDKOBjxpbzx7C-V1QyvTOqPNyitpkdtxHNkitMvm0nRVSsUtWPbDN04dLvJSDlXApwzDq20_MB8cgIkMQOJbl_vgxkmZgNKhUW3hLlBmq2cSBikOIaJBSHimcciCbKqgeLML0A-jXcDuakRjMY58et5DJp2DrKYTV3ATHfrrziT2D6skj9NgRwdufPxChpMYqD-pQFj7qxHSx9mdJxvl3fpVdLrF9LfmhN"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:55,881] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119455880",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:56,418] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI4MThlZTBiOC03MjNmLTRiOTctOGQyYi1jOGM3MTkwZWJjZWQiLCJpYXQiOjE3ODgxMTk0NTYsImV4cCI6MTc4ODEyMTI1NiwibmJmIjoxNzg4MTE5NDU2LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.ihnWgzX3VWcafpC7oD407elitGWfL2BDRPkeLIgGzRXDoiP42WaxAsWCzAjgEQ2tbm-IWHxbEmEMn_EZ0jAjudxVji5FA-J0dj5u07ggFWSSja8Bpl9bHaiiWHPKuxUxbfkyjVsr6-5er_JYIxPIs6yB4T1fHylxQql3IPNrS18pcbA-Ldorg9u4Z3_19qBt1fsPsxc6GRWAf7NTmWDPjlyv1bqO9N658eFP5-HItQ9eQUEdrXdKWqKztr7wZwi-TAigkpGf58Bp77odMv7HIs2dg6MztWjzRx2Kh0ZM_aRYIh-gwbenkHjZ-xyLKBCS71DBxH04ATAWLuDD_iDsp6kAcnyncbB-_ZAUuxp-Dnwxyl51BkuVRGmsPCCXVOYhUMZ3HY3NEwoUMGyz5-5bNcSb76C76CO7WUMLsNx_aS3OPg3gCOzCQ1mzuX_cyA8CuIdS-U_awX0-gnNcU6Tp2p-UrdcEws1RZc25L4ChpNMP4ft8e41Is96iBhbvAsFx",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJlMzQ3M2YxNS05YmM2LTQ4ZTctOWJhYS0zZjQyZTllYTRhNzgiLCJpYXQiOjE3ODgxMTk0NTYsImV4cCI6MTc4ODI5MjI1NiwibmJmIjoxNzg4MTE5NDU2LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Xvcg0vJfRIS472r2Znnrj3HxPpJR1TPoXXyBFmNYUXtl-kTuy6gpl7CbvlnwDBeta1cqAzGIBLJS8V64hoMMKYiMp9teKEOmRwsHoMujNpbCRrxaBt49xRCbV0K2H-EVBjPHpL2HpQg49x48Ld_sz8j_yHH3IChsqN10OXcz5_wb4-83g2f-KXDIRwnWzyvTq7gYlRaDGcgyY8FWwuehAqPqXEnFbhY_mD6jWZNJXVzb1C79guvhvBZyOdiTVUeAL14cup914vOWbkaeP_RRX2U8g7HbYyernHEu1iSZrBMhLbcRCpblg_Tamjy5-SuigrZz1zZmKie33zA3y4zpSdF1PVjbrVZ8tDuCUnytmvWuyFwvUiRAMR8SUFz56eUJZHFJUmt1Tnfv3MN2XpvvgDovrZ3gcA4IwtWeq8MbVgI0GFuDWPCfjcxcaiD8oCmvy_gFd0F9UtfW9fhtKbrVkKAZMs0TLA-u0PMKYpWmWGEGMOKKGnyxzxCBGpOO5QTp"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:56,923] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119456921",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:57,418] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJjMzMwYjFjMy1iYzFmLTQ5ZjUtYjhlOS1jYzYzNGNkNThkYzUiLCJpYXQiOjE3ODgxMTk0NTcsImV4cCI6MTc4ODEyMTI1NywibmJmIjoxNzg4MTE5NDU3LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.GYyX8kitPA2crH2u17eushrDdaSExidwrh9_d6t7vByP9LTkYpc78P_KQ7oFnC4goHGH7TlNgux3krMUldMv_iiyFeY4apLDdWIZkApq7IwO3PzXQJDIz3_NlGxhAtz1LBRWvSnu8cxtF9zCESPDUAs3EwhPag5bS2EKbui9lkiTh_qRlIXu-1Or6Z-2h7TqLOYyvsIO3U11UYLAPAdNjbNnA6vK6KeMEvlyTAChTf6RVBwPdaIk0pELYO0JSQaESrkAoLJ1bYjiyAPHfj2pHN3r_vyuJu0daHN5GL3lS1GQAfaqJR6WkoFfn_guszAvr-Sr0dVW4WPQYC3bwGSuosvySe1Qhtl4C0qNYxxzKd1Q2M2Wms8fKmqApmJR563Zi4toGGpj1rCuWF-NuTaM7c3q14BjO2qW247yHb4irkcFhksOMUV7dRnoO_Gxhj2l1Y_YzZ-tNhikQA7MxyM68mVwUAARULSUSu4bkdktGE-Np1JjHwr7F9_MMjRa9_Na",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI0NWMzNzBiOS00M2RiLTRiZjQtOGJlMS03MmUxM2YxZGVjYTQiLCJpYXQiOjE3ODgxMTk0NTcsImV4cCI6MTc4ODI5MjI1NywibmJmIjoxNzg4MTE5NDU3LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.HwW_BmotwBGCLHkH9aoqn3kIe-hy0C4TIaCdK0Rv1hQQJGSaWVId_g9nq5r4exisGoSIS3c72GzMdn2hqQaLPbL7LFqfLbuX2q6TI5H26ghMVYQWXsUzCU70BICcjm5b8ypm-VGWbIrsdzOyiEpvHyr3wpxQ1r0h53LPaJxps6uyF2MP_WSsxm4l3fVdVZ-Z9LyWQTOxCbQkkqVPSAd2HxBYSHyHYOBQzZSC3PLc8jIqqn3VM7k2QVM-bALZbMdjZVok0UnD0A1J8Us7d2B_u2IlvnGHtTz_92SshUwDzfjsCRUBsbQ6VxtIV2VcV6GIswtUoof6JzF83ssuZ9_vQVqkFBxmFZ_U__Bva-exXKwdO7NejSzkrwk39QeKo0lg96DzOBVUhbAJ9RP-nb0qmg-mAgIHUWd3Gafdkh5Od5OyKmnbaP9K6dczAXmdh4v2lse_o82VNy1HV3q2Nqymj6XQegU_HezDrkTCpcDYBzPccJIP7xk54jrX9FRleEmb"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:57,976] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119457974",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:58,495] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI5OTQzYTljYy1kZDBiLTQxMzEtYjUyNC02NGRlMzI1OWQ4NmIiLCJpYXQiOjE3ODgxMTk0NTgsImV4cCI6MTc4ODEyMTI1OCwibmJmIjoxNzg4MTE5NDU4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.pVcaGH1UMZRzRAs1DvoE4oY56c07JkSo5SYE3g5JqM-w_XUV2UsqcQ4i6ao2nM_PDjQQ8WRrBTkrJ0tsYUtwRUmoY3OLaMWWtdYJZGZvdgJ351eajqoed7OgETafyBIO-ivTCoZXW_unYyWo0e8yh2YKB1fMofOPzDW8u02C3galyh-aDspM2Zj_7jH8aFxERkskDBnr_deAiN1HcSUP_S34sOqhMR3Y8F774GFqTXS1iJZ-OBaoWBU4TZHjhTPIaFAui0jzNqkVDMYZUpJ1zdyYuParnciwdjNKbJrHXNJHgZBa09QJ-DXuUK5NS0tqge8UYfPB_1jB7355nj5AZm9hGcuMFK25lm-Uzow1ppZ2MYwnoY9naKPKfoCq_mCESkKxlw0lw-5xHXvh7vs5cmDMH7ZlA3UnZwWR5ylo5QuluRgGn5WUHqQRDH5ii8wbijCOmjI61JagrC9l_e0jt7Ih28Z7rSzBsl55cWMOY5RjUUuqnvtwCPlOxPEEi3mN",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI5MDA5NzBjMS02ODAxLTRhZTItOWJjMi0zOTYwZWIzZWQ2NjYiLCJpYXQiOjE3ODgxMTk0NTgsImV4cCI6MTc4ODI5MjI1OCwibmJmIjoxNzg4MTE5NDU4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.WfVThpcnU7dRfAe63w5xEkLv4y5Ct2F1tTyVSgwpGhsF6A0OYaymZsvtAzYrwBsw-u4AS0Il4C0eaYlvuoZ__cYxgP2jbxZ7cdJFkVduDtBGs-ZUCtiL_3-pqJJVFQBeJ2JvcIV8QF8-6bPxEgCdqQiSamVCcR_gwjJm86XvarRMzkYPHJ3iUeBXR14eRn_8TBnVzJTqtieYu7jqBtWYWdqhuNqgxE2mkQs2nV68g6Ajzi0huO7_oyIYMUIX8Rh8zxgEKWOf1pqcotxYkiw3vNdU0E_Vikv78Mz7xI7Nnvo6hrVAGOiOP77kYQeeoxg0aCoQGOjk0uLXC31h1HHBC30Ij7S3PAmJMw-2oLtGmtBIbdZxDioNN4i8ISlYsg2QgwZ5iirkT83wSUKyQcBT9CpeX5_je6TPuFdlIhZy4Fw_GP3vt8w8woMgB2lfbbpKzt2wz7oLMk4_EIjiENuuAK3fo_4EMfI8Dbajrg3aKD8hHKwfBegMSitzzVZOnWzl"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:50:59,066] ERROR in app: Mapping exception to error response 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1156, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1137, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 hour
+[2026-08-30 13:50:59,067] ERROR in app: Exception on /generate [POST] 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1156, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1137, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 hour
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1249, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a ResponseDTO.
+[2026-08-30 13:50:59,068] ERROR in app: Mapping http InternalServerError exception class to error response 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1156, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1137, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 hour
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1249, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a ResponseDTO.
+[2026-08-30 13:50:59,069] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "197"
+    },
+    "body": {
+        "code": 500,
+        "message": "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.",
+        "status": "ERROR"
+    }
+} 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:25,467] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119845463",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:25,966] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIyYmUwOTI5MC1lZjg2LTRiMzgtYjJjNi1kMGIxNmNhMGZmYjYiLCJpYXQiOjE3ODgxMTk4NDUsImV4cCI6MTc4ODEyMTY0NSwibmJmIjoxNzg4MTE5ODQ1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.HHsG2jbwNyu-s1LqyEhm3jyGqg-aBncRo82LZOgfiAzz4b6_VJemMZtRluzjfZ0WPBaDrmcKiu7LAr0rSBQWtFN19k1rebr3qszN8VAn9MKJVn74f4LClkgWSV-Jg3W6hNKJwO1kMGYS-qUh13lC-R4eZe0fT0NQ3MWWOs3soN5O0H1fW6fBttoM5WcGujIsGM_nMi6V8FwZngcmDWjZBhxpvFgvq3sr3gMf9c6_mJ8P2IAa-_bqC-_3Rbp4kZ7VyG9txuiGiHNmRtUT2Gv1d69GPKubqjjAszib0ZdfaCHFydSwxTkJCRS_yMS_avHIcMD8U7K_ckF48dhkzvmwOAgBo5CVD-1srqygdA-JLvrA_fEJ474GUHvRQx6yyyrq6IJ00VI5tRjPL_yfNab4-4TgT13mqT6VR-vzW3LKhke0wifo5B4CZIKb8fOfiIDMTCH5C_qvc0zw8eAZZrxx_z0PrID-aNp7qMs5nJLANXOWYbY2EPCNLH_Ga65wymKq",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI1MzcwOTJkOC1iMzdjLTQyY2EtOGM0Ni1kYjc2ZTBkZDUwZTEiLCJpYXQiOjE3ODgxMTk4NDUsImV4cCI6MTc4ODI5MjY0NSwibmJmIjoxNzg4MTE5ODQ1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Z27HV7e-GKhgqBedKcTVtIAUpYHgl8lk-zzXnGHXGNs_hTE8N8z6XVZ7x15Cdz8oSeqotHSJCaV4xXGM8Rugj8ic_2k_6ckxzEfDeTm4D5VwyjYmJu2U6Re29V6FNqdz1-_FgmFj82EG8g2QduCHS7rcbnLhmqbxbPiS8k8NNrohP8rv4dsq-CZ8b0pp0BvBvVUejsdLC23plqmsWZhqwe_2HVvfGfspIqpRgLtjUO_I5jFuDNvBkQM4z_PazDTWQ8Ws26ssriGEBMaAdeFTS9ZIBG2ACuXiSqm48i4bCJxWtWH30XOuJPQy081yIMeSMrd5aSzNezlqwLjgNsXUDlEg2jUBoER4qLRMjigbT_19WdMqdsdGC6oG8Kapqt--iwzu7JKmFWOhX2msqfdG80eZoBNgEaCdd-DIkUB8DTuei_oI9C6D5-pffizzlJSL94j6j9yiWf86zTF4gIvAVti3TxUcORwHinnVZbf4Y0rLRKOq1FXIpK3upevYMkSl"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:28,812] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119848810",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:29,329] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI3ZGM4MmVkYi05YjFkLTRmOTItYWRkMC00NTEwOTVmNzMyN2MiLCJpYXQiOjE3ODgxMTk4NDksImV4cCI6MTc4ODEyMTY0OSwibmJmIjoxNzg4MTE5ODQ5LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.IUqr33mlwdCNisD2hIf59ADhUcYEsHcCaBOkiuami8lzQPtBEDs3mXcVMqeQH1YETsiYM9uOLBZ2l1LGvYuqMm4pcuMDTgMZpU_gifUxzGijo2B9QLA-CfUNO2eFxJypOlcBETcL7dvDDU4otnJzdjmccgEQL0XFW8epEUdOPh68or85FJvt20XXCXnm6SdQpOjsDhnJVZYN4wfeLJGN2u202AY8lUMk2qwp1xar7xELZeU7RaJ0oYQCL0F-jMS7QOWuKWPUc4UynUWsx4u8I0U1retuVo9mIMkZy0GDaKMKKsW4dUisju3W1RZ9BgGbhVpja66feT9xoce0IryHqcAFind6Yc37JCoLzo6mKf1B3THJhKDkafX1vPsh_PlUA6JQrFGaH7B-tvGZcFzxkZAEhqB-ym5ta3LjG-fRRB8l2c9AXdGd7DlSMJuYv-heEvYcmiJkYH-8SThhQw5JJ6nYWdfuAyXjIW6TFe4qYmfRytPMZjVjF1r63byo5IWF",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI3NWU1NTM1My0yMDIwLTRmMDctOGQ1Mi01MTJiNTI4OTcwNjQiLCJpYXQiOjE3ODgxMTk4NDksImV4cCI6MTc4ODI5MjY0OSwibmJmIjoxNzg4MTE5ODQ5LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.BhR5XTS0XxJdKg3T-Klv9QxoVqgK_CiAoBierkJV2akctV00p8YbaUfqDNlnx_cLdKTDTtzzlTfvIzVwGJLsZ73b1ON1nbnY28d1meIOGzJu2tEy4k8vTWKDwJGCvOYNgIAFPHF8QzVYIq-T_2aG6DsWBy7DcJQuF35pwSO49JDO4zBnJbqV_9-IDG6ZMmHZdF5_xhr_j055jKFgREM4ewyRDrpQjsBzNoDcp5Qi0fYDakpcteP5cuKTrylAdGDDff7XyWw8oGUKXCR2PlSC5eSSl4IB8WI0aJes0RtDCJfCXw7mi50hzBIf5xtZeyTORjSpK9DKM6SIyzngvrPvX8_Yj4byYsd0fbBQuVesNNa5lS3GDhEDVpL5Bl5glYIW0S5IOr4atYZ0tDtF8z5e2bBQ-tCZcxouZR91zeCf0zOL4beam0lzvMck8bAV5-rL3hzEv19yfw5J5B8iLT9_yRi4RVauXJJJ3b7tYyc8vS0pzoedrHU7R2osX6Ax9Xhi"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:30,030] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119850029",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:30,518] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJlZGRhYjQ1Ny1lMDFjLTRlNzktOThkMC05ZTgyYzRhMTRmNDciLCJpYXQiOjE3ODgxMTk4NTAsImV4cCI6MTc4ODEyMTY1MCwibmJmIjoxNzg4MTE5ODUwLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.krDPmVIZFBwpxJBDBC_vo3U9x9x2iRwMp4_EC8VPdnFVvtgbMW-Or5ZNx0_CdNQ4su38O38zzZ5kWQE47YplFF3Li_n-8Qi4vtsLsPTgAUcqA0TuiIg0gitxPeR8nJDlrSUyAkDRiyp9yF4QBUo_X8GtRdji5JsKoYSCgsZ1DlcCbruu7jVyuxSzLooLWqDPl3Iego9aZdinQ4V44vfqpqNBw6glc6dC5oEKJWhuovRQ78VQUak5M9eM2zio3QCSC_jvXwjK1TEcn4rldbpHQE9wdoW4CRE50DZSZ5TB2DD-nluBbspbTA66G3Ij6CJ7f-Uf29oLxbvAZLvWWsJmVtfJIYKZ3CQ9VjIDroRF5PsOreqSeSoErcQlp9EP0bAGVLqcyj7HU4zyJ3J65bWq-N7JQMeLtfhIg2CX2IDe1oINSwWDXeLS9_i4_wghQyAeDFh8NFKhkE_7ltlUWJFv7gDdIcUoxfWrGoCY-D1myS32cc5pNX7XRTBtbYapZyhy",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI2MDEzYWQwZC04ZThmLTQ0MTktOTY3Ni1lNjFlYzdmYWYxMzgiLCJpYXQiOjE3ODgxMTk4NTAsImV4cCI6MTc4ODI5MjY1MCwibmJmIjoxNzg4MTE5ODUwLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.awloFt4IUWrUqHaxmbHhiqOW7Lx58ff-j3YdwZreuYn27OEVuTGoWCDk3Qt1Y3kHhZn_wErO1DCZNY9ud9X75w5BryRaVkOT2JBaIdo2EMuxpSxZtwQvU5v9HPB2ZILLBD5c7FIOwH_Azzsn0ArPXPCh0reNFnXfNduFX7-1F8KQT59mJlbMyeuIdeFarQLhTh0OVY1V7vs_LAO-xG25I8RbErkPyf7eeXtTxBwQ4xyhnUovuBXEkGDQrmUVjPsHkImeNShk61uyO9AhyaXAuBVVZQt_G1ELZSAGWQN82y9NnMKjNc3G7M03IyhpDWwopHI3xgUaM-gLxt4GV9SVjLe_Qf5wwCyNL5ifWG12womZOFFeRYIcWs0XY0R2Pclo1Ue_qPg2cbPaeMEYja85yBTBjXFRi5PIAXqT844s4wgptsYBsbgfIZUKV-bYRwgMVJLcWkc1hN8VgKXHNOYjDg8384dQu9ThNi45UqAmFxcJgrwPwQbAcEpVw9dv80vz"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:43,761] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119863758",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:44,266] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI5OGE5ZmNkYS05MGUyLTRlOTgtYmQzZi1jNTJkOTFkZTZhOTciLCJpYXQiOjE3ODgxMTk4NjQsImV4cCI6MTc4ODEyMTY2NCwibmJmIjoxNzg4MTE5ODY0LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.W9DBe2sgjZMrpRYnb_aVDzizXkPDVsRH_a_OJq-mCP3mzGhAW4V01ejBq80mduSbpto7_YihtCiAs-w-2yusIAaTydwNELyY4rR8QMIIemhvTR8M0eEa9_-rKL2s2bq8sXVnETmlS36ANjwnSHz8x8s25I-Dnzr4TjBWKHzqjbhj4Hmd6jq27NjHF42OnmUIlvtPnvUon7ASQ4t4Tao2HzL_C4nQKZCJ4jKdSx6qWZhLHM5iRbsml2pvY8g3g5tUIZ3yJXT-x9Au0eD8msBZBHbpALLnVPq6OL_Zenau73NssOFlbpV0h9w3ttLb7jitLawb6wvgX4b71bFiXtwpd_EaV_gmuRyFLGfACNC_ZYBGADOb9-z-ZZreg0n_aS3TloTAK37mMJnKid72SCL1Jzezvg_5qzb9dBq5-p5jDPWo87hTbkQgdqgd5w5EpNA2cGMuAufVdKIUX2YeY_itNbYk_R13iKyIWkxGfbNxv07vOPHdOsIylvAYU1WByY54",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJhYjYxNGY0MS1hZjNjLTQwOWUtOTVhMC1hYTVlYzcwYjBiMDgiLCJpYXQiOjE3ODgxMTk4NjQsImV4cCI6MTc4ODI5MjY2NCwibmJmIjoxNzg4MTE5ODY0LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.cQCBIt5OeJLEJqrkKjfgE7HyGt78mFr_hlEJqbBzYnT-O5XVJUi7hX6z6ndgBC0HSPDEup9QIK15EisfQms6hECUD8APjpndq2fLk8pC4qXeD8_zS9-liAuNnxsvfIXuzan-dNixk4vOIffpBOdv_6LHkIR8DBqlGovfz99Di9gaweSJifDmpi78eZPzbSx4h0buHyS4MjsTaIScIjfvkOxVD26515g9vDYK70oyzDHQpWFz8NDF2UWTF920PUQ3txD07gyZT0OKl0KZqjn5FgOa6cMo0TKea-WOMSsjITLj1WlXK_zFey87W40PdCF52UwZ8pYqeQGhxzECIXkigj7iZNCiTOkWLLYMaFV6wxoYBj86IZwygriVm7HaG4uvZgBzrS3aAovlw_VAQsiuVheZKlle3K4qGTvEUVZR4g9XEAovQZzG_J8Rxbct7h5ZtMdGlduw7SdCJCgE3PKUin7oibKQM_h4Zk_8fs3-_yjmx0-dgMA-yK6nkzmq1C_z"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:44,843] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119864840",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:45,337] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJkYWMxNGQ1My1mOGFhLTQxYzYtYjVkNy0wNzY3NTFkZDE3YjUiLCJpYXQiOjE3ODgxMTk4NjUsImV4cCI6MTc4ODEyMTY2NSwibmJmIjoxNzg4MTE5ODY1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.UgbZXr9op1p8DIrhzXeNwP0cfSkN8q9Ds5Bt0I1MjqVivBFR2lixLnvqcrgoHhG-mbKPi8WZ452ha_NzUIxuVlhEjOIlE_oNJLwOoe6qIPAp5Rp02toAvXMJkVHValebTXWOLimz52T9v9yTC_c3GTxHaa8SgEfHAMfPNvcBtpGxk7KOxBa5RSn6fqDWnA1MuewS0QjtYjvZ9865UbVvyRo6ViXbAyG5YlVCrNVnAqR1SjBk9zoTfcV_hsv295ZvkFHryQuLYnPCLxhG7VtuQYB6SospgqTeDHb0xRaYXVpDAKtV8RBj1AKrrWmKzz9vtFv4_m1ytamL56ei2kYmJIxN82r4erH9Oh9YDfnL-fKzT9EQSrKx7ZG3h2X1N3BS7Ul2HSffOpECmyD_dECesjsB5UBFyiRkfG54WcOwDudImefUocvDoSWdoxR-1S5LFf3T1Spb2MOModsUjivHAjKttzPDHTU4MQJEQjg6b3x2s7u0UgAiWOPOQturJzuZ",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI0YzA0MTYxMi0yZjM5LTQ4YzYtOTZhNi05MmQ3MDY2YzNiOTIiLCJpYXQiOjE3ODgxMTk4NjUsImV4cCI6MTc4ODI5MjY2NSwibmJmIjoxNzg4MTE5ODY1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.iE857Gh1HSlAAbHhkGtCi_Up4oFPJKXMj_PODOe9bpjoh_p-P3TpSaiBLeV_LbfTr9dtB0L97n-zgZhdprPoarPVLGocAkIH1aFuk9N0f3X1WrOIsH70E5Ch8Xzoiok3Kh945Aa60YoY00IoPILnm5oe3kGh5dJWtBUd3gQDJ49MFDeOHvog5aRNS-uE5g5H092-gn0gdJQgnFz4n6wIt4oCCvtJDq2A_XFQGhV45V1AhuCkYMoUYe2gKM4muugdOgjHAQIDlPNgeb5YjzYNkAn5jpv8vRRV5GiJqiXSDkZZJxxe0NXqpal4ITO5Q_y5cWnKRfCRPQaHJ0i2A0N4uW_SuQsfE7sKOsSt4tEGlycHBaKLF1lCBnOHYbUmSXS4XvcX7pncGNE1MpG5oxZhgziejC3nAS8jb_E7piSrvPb24J6bLnEzDFZdLU_buW1WaglQQVEZ21e7T1rgAkW0XROpN3bK0hk9xGWbSPVYikHkDIcgocmRmCtWXXTr9pjW"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:45,894] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119865892",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:46,389] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI4ZTQwYTk3Yy03Y2ZlLTQxYzgtOGE2OC01ODQxNmNkMGJlYTAiLCJpYXQiOjE3ODgxMTk4NjYsImV4cCI6MTc4ODEyMTY2NiwibmJmIjoxNzg4MTE5ODY2LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.o7Z7AhT-WiUIPXYBzy2THNDx1gV9tXWYyEw29eMwQ8GMs_RaNA7EqtNBmafFOFrCqgMzHawcEeACHA88ClFgZltkmY7kBc0kBYmiwa2nV8W6FOdKJtJg-523lQPUKiA5HPiv_u4thqPkK5quK2EUI0c21c-ZM-dnpauYq6J1U-Em-EPRuh6HNcSRjJQtsx2XdVunwu0XHbRKIza6UqrLpzeQZEDnE6pZ2syCpHfOUM2uDh8t_W4HJEEBaHN9mtNYN1-p-B-WLwJKzuS2c58sGqNiKlA-sjSx6rvbPDwscwm9PNC1H_uNCpG3XMtJgH0xdqhNXmuxaFrGqyT54apbckJ4uZlxnEskd7uLC2KU_CHYLS_l721fcN4VmMDfdANo3nmGa9NYedjqqYGcMB6akwEvVLJR3usUgd3a5GDUalHOrhIyyxCi6pHqmaw15Han22nSltOGEbiGpJMhXlroeR2j7EdComihrkV_qpe2Ikv0BYiwLWsgiJsypQsme-WK",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI1NzdmOGE1OC1mOTllLTQ2MzUtYWFlYy1mNDFjOGZjNTgxYjIiLCJpYXQiOjE3ODgxMTk4NjYsImV4cCI6MTc4ODI5MjY2NiwibmJmIjoxNzg4MTE5ODY2LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.OGHHyuvl6oto--8ggPjgYCrfhixZqTpI2fhyU7rniIfUWCGchqnCDP0OHif9nZr5t1DB_OeWzq60WcZ1PZMhp9xxrCdrAv0CkkdKNFNML0Ze0oaEJKzJ51hiG80jzGLHcQCps6ZWlul-42zQ0C1vY2nTDgPcMKhElYCmFfY8_pHSgFaXcS54lJUD1N91jRzLYMyKVRIG_oPnbZLSYJRARrcmFDzVlNrBSimImGagVglospNxtxuhEhUcKe-cxv9TVKpH3ZLbrfQR0XQMOLxpxCgrx6ey7-Ie5o2r12n84pDlwDj3c-drIpyGTKTYAlYD8a4291v_IgxInJ6fY3cIrKlXK_kB-wlUQ24ySSb9-iJveDwxOuy2GKbBZXSrn-xvIOVkovzfu5Whsb-6fMHr49XvBZ-7Lcf3BClczI4F6bxodFegd5yQT7PSg4kw0ob8tzlUlT6AUfcJdMIA4wRMqhONmh5RKmaavvciy0jMMvRomErwsSXvc2GvkgfMWtBT"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:46,915] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119866912",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:47,435] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJlMGVhOTIyOC0wYWE1LTRjMzAtYmRkZC1lODQyMGRkOThhYjgiLCJpYXQiOjE3ODgxMTk4NjcsImV4cCI6MTc4ODEyMTY2NywibmJmIjoxNzg4MTE5ODY3LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.H5KKSWyolRDxfj2-nQb_YGKewdfitsvI4vQP6UDLkVGi9EaV-qKErfHeSloiauZ3CaG5FyGni1MoP8yBsiJtx6bwcRyGYs0YihZqdVTRDF5z60ArKhcudniJmeyIesvSjOnAEc5ofnZQN2L-OTaPrNG8km2kj2c6nAsJmru72YBbOqt7XaJoobYYIY_UyDlM7aSp9kPzda8AD3Hx1x6MGyOFP1XkUykpGTjgoRSJLNj6pFOJ_UyIwLYv645jmNCqzWy4EdS1UwQJoJCv7dHvoCos0556ZWXmoWwM52XNWBqmGSQLqSMQQdYzLqW3D4sgsjp1m07rpWch5PKSsfjGDJ3w-W6cQqvOrLI7yQn5IYOks_6-aeMADpy4SjyukVr84lQjioMM4Ljpx6lOVUYRePRE-fm0F0PXg57dy1t4fiLLCjXP9k38z6z5eIBo0gVgFQ_iLa-gvL6xxA1PsjwHEfxQ8B8vNedH-mF4BBaACApiCW3ysDx6csJaNvuSUpaa",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJjNWY1NGY2Mi04ODc1LTQzNGMtOWM0OS1lY2YxNjI4MmFiZWYiLCJpYXQiOjE3ODgxMTk4NjcsImV4cCI6MTc4ODI5MjY2NywibmJmIjoxNzg4MTE5ODY3LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.lS1ojJkrvBohEJj36yy2EBSfL4yYKDr8MNtjX9h1au-BZfqIjjLmy6C2dfz7uGbQRAsptWMQpj4nlQbzcIzY9snFV657KpHRxopprvdqnD-qlKWT5_Cv6Q2uNeI_Ulisqcs8Agronro30h6odIRJ0QF6iHF6QRCO9wWuD_089x5rQ6wDfozblaUQIifH4vVikNuZEjKpg2Fuj7cm9Vt1n2l_ShHblvRSplrHgUTcuvEHFPyuQXFqrYhXCnDfS8_KvQA9oOq0XJQgG6SJeZ5tQT9du_9aGfgoFs5wlMnIUOIovX2jVz4pCnv66sG0f_h0BU66vnWkQVybaMwttt1Actcl0fKUXiHCbfYbIYSqGH1v31q12jNFfD8gbAii5-pSK9oq88KZSHE14nVmfpShwyAS2fGYSDzQ0UzlwDZyKuV_XB5iGfRWo0cgBDXijo3-xEe87rKxThG9mDa7K5NdpWy50g-KaFYVOcLjvNOJzc4RSm3vWnsYDVF5uHIHZUUP"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:47,902] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119867900",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:48,400] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI2NjRjODZhNS0xZDg0LTQ1NDUtYWVkYi1jMDgxZDdhNGZlMDAiLCJpYXQiOjE3ODgxMTk4NjgsImV4cCI6MTc4ODEyMTY2OCwibmJmIjoxNzg4MTE5ODY4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.C9gW06AVYzvzETayTaa2zq_weYjwmrsVjBTdxzrBy1kV_SUM0SNKly4pvSvpOoBLbL3Fx7OH7GfgMRZ48iql73W0YMBDC1WWv0Bns2mr3I-2EEyDMQcp8Eq_eBcAwoEoc7nEx-K3LFrctB3KEqXwMDsEUBgzGAYtftaHb9BlUQLQQZM19Y3i-UPp_9OsVhlYBp7mGlkTBhwFb6WM9PsslxNNTb_6r2E7kgrSpP4xWWA5XV15okLLkK_pCtgQyE7nQq4rPC6q0jpRfn1Zr7lDlHpbtAO24GDkYLaVX36HklCYLPpTssIBr15-6SkjuUgw577MUMMJRnaGskbWY1ciwfGctmjKOQZrb_-uNssewbmzQVKn-Xr64o9gxVwK-8H3n1hIkh3Mc5qhbjPyU0ArQfxds788onhj2KdfFVPtPyxgKZ7HJ1cazra0NTLmP4eAtx4WAf9lWwc0hXpes299HPQY9s7F_fY4h5LGB1Kvtahpijui98cTBKT-LMCH5Jro",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI2YWU1ODg2NS00YzljLTQ2NTQtYjE4Zi01N2JjMzJkMjU2NTciLCJpYXQiOjE3ODgxMTk4NjgsImV4cCI6MTc4ODI5MjY2OCwibmJmIjoxNzg4MTE5ODY4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.R26LQG4mHF-EltcBNizsDsFymGWCjkP13E10NLw-UJjEijKStsFh3WsVuAGLLl_Y-sn13frK0BERr3m0KQ1taXtUNh0yT3sVJeTHZpEKpF5Xr9hDCp19k5jUje8POO0FZj_IYDbYXeQjL6kxfQeP8by6UdtYK2qaUrBCWjECx0beNzK0fjcKWGsrVU7TGnzHtffmfnGg4U_RwGhjCyj4Lv_PBXnKrDvLIpzFitLw5XVRv7qh_8PYxdRfFxeSgC84z1mbDdJq235OeVfex5LZXKRm3flVlraLEFeHnG-SwloVW4UPJCozO3MhRAiraSyo9to8TVz71UoM2G2TkBWz5CLoao5O5k7KQ-oPk83YzaKRKo6l-dHSx0fNdV0YB-1iTa45aCGrkAmja_k9Pto822Sl1fRh3uHeG7Rjv4BzzsiW9bD-IcG2LSg79QF_gYdDEyc-rWhtVFTOEyzAgOV7JrtBA6ABLnH7azHBZPx84ymUAMucvdeZoAr9_a2VSa1R"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:48,926] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119868923",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:49,444] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI5MzA1YTFkYS00YTkyLTRkMjQtYTM2Ny02ODc0MGQ0MTQ1NGUiLCJpYXQiOjE3ODgxMTk4NjksImV4cCI6MTc4ODEyMTY2OSwibmJmIjoxNzg4MTE5ODY5LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.W41PEXiLb-2hUIBMsVoX7bltV3ON9bVGxAdyrybLoIp7smWhaz-0sIx2IwHTjXcbHBte5q37vttjHluSW2C-Q1PcBhKGhzW2PsG4c_LPLMTNlIkpA4EWycq4OHn_RANgrUSkyJE_9kuuV515_UlV0Rrp2p7Zto2jxVg6bXlELpgIXXrIxiu-ratfca77eyDFC0unLq2GGDPqcD9MN_Bg0Apf5V1a2bJr5ahaopyEBG3_fXyuoJK9qXnKNtOVlMd8Jc4xAjGeuxeQ6l6e9qslPnaAsNPST_TsZClSYnKdPcfuplIiH-3TQsqHH7dqiU_RsQqAsAOl3ScoDSdUnE422vzzz0U6CXxkdKOeO0y1654mZmn6tgem8Bne3nZa5ZlMRl34UwUH4XNpuV5Gk6QxdfYLGjW7OxV7aIM-dlZMVM1QBVajuzSf4xkgPTosnVb6xkfHf2JqADCRAmxYOCN2Naohril9816fzdZ-D1nNfRnAoqH16iYeqb2IWLcyekdk",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI1ZGJkZGI5NC0wMzlkLTQyYTUtOGQ5ZS04M2Q2ZDgyZWFhZDYiLCJpYXQiOjE3ODgxMTk4NjksImV4cCI6MTc4ODI5MjY2OSwibmJmIjoxNzg4MTE5ODY5LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.YX-Gq7VeDe-g_Hb-GJRclpKh35PZQnkQR1LpsP-AaPV1XGnPcWg90g8jWZItrc9LpRfcJj6E2N2TMhDr0lLAQA_u_Fi6R0CX70UxRkhzlzEhFViinb6ikfgu4SL51CnVbQrGy2CvpNT88mrjjQVityKJgs0ZI7ZkEBBFv7_rfahgX8L41RNwSHEkOxlvLKBOiCwEw2vj04RB2AGPOGtC_TgxpJwGpQHC0he-K0yPB5XoG6oJitkr6KeIn1L-1wnqLLXYYMRPG_UTXyrKaaTtkhDY6q2TtlRfMUPNj2ELC2_yD3RNwu2H6i0GLbtPs7OzZJR_kfdMegYjfQbm8QB2ym4UkspaxwIU5BiiPwLNGihUsDw-u3PUPMnGzqk3xVDod2bz3HnFqH_wSJh5DwA6TNoi8NgbBcO0B25uGi4tYrUAYtmtpFkitVyKnffkOan53xuSXVjaBerZDNU1bHz7buvOAewlV28TLNIhQVP1AQwTIjoDETF7iXq2P1XzzTrR"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:49,967] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119869966",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:50,498] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJlMDYwNzI0NS1mMmY5LTQyNjQtOGJiZS1iYjEzMWRmNTQ4MmYiLCJpYXQiOjE3ODgxMTk4NzAsImV4cCI6MTc4ODEyMTY3MCwibmJmIjoxNzg4MTE5ODcwLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Op5hqbQs3HVjbu3_n0OvJ30UpKIHiDaCUdQI6KKcvwxns3RAP3oqwINCrq4Yv6tFhtnZwqQg_ORAllmLyNjU9R-Nnb964bEQs2-mQyj-nk_GB_S2faOSB-uKtPKLHoLqh6GSwqaf7bUycBciMCHOsVH7MY7VWqxMb6t-k66H8c3Ti8KEgx7d0s7OXQEwJjMAEAB6sr9CLB26q0osB1hIW250nMI5KqP8qi38Z6cHwTHdGqkn-qeApFN3ro0YHC1hvb0bJRmHQfDdwlpvv8696pWOYE75psGLzdh7aabWdg6m7As-645swc7MfA6kHnZlrb1ibAbVYei-2h6QP9mKM55vuFjTCK4e4stuwanPJPAqr5rNTjPY4Ro5CGyrNBm9C-1_UkAYVQ-GPG6p-x2-opNJumj-P3W-OpQjMhh0v_J8ikQyEh-SdVDlBhhDwYpeDqXZ7h7ajBqcRsz_IB3lV0LJqWf-Fd3lY9Cap6eBk_9phVachyZ3EnTSPUrHiBaf",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJhZjAzOTRiZS05MzEzLTRmOTgtODQ0OC0wYTNhYWY2NTQ0YjIiLCJpYXQiOjE3ODgxMTk4NzAsImV4cCI6MTc4ODI5MjY3MCwibmJmIjoxNzg4MTE5ODcwLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.dGsGb7lVCdcEcponACDOiHHeYUEcucl24i13YYEGbeWhXt1EOSKdsM219WOjOxvQbVsMhcQAZ1O0YeuBM4c-RruvavqFGK41GXqECtkipKc5AZoNPti6kdOEQDKii6EfQz8L6blMWEkFf_VnO-Sj9MiLK-I2_zo76zU_k9_p6Z644eR-g2FYWUhHbdpnYMHtH1jr68ukRgdIn9wADph3Xj6uLoSsOd-iI26JHaRtK1DwM1npL1WwKXkQq8N2dJQ1_qg42ZCZx_fUPokwG7UCSWq9ua6AyjIkwEwMciONhBY_cwBvlPjuC8-9hyn9GwBmV8mGrWKyQXY_SBPSuGBNuAbIz8aR1osS2POn_21zRM_9ymTffLFZRjbdu76h52wX6UpBmg8GpANAIanHi96WPqnaCnO_2cDZC8iC8OS6JbkqBAIWEmvTP998aMU0hvzqVTwum5xiCwmCS0Y4bNfVRPmO4X6IZnM31IhWH1OF2Szrip-PIFhPvGkEYyUc29Ox"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:50,953] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119870951",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:51,457] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJiOWY2NDY5My0wOTdjLTQ4MzQtOWUxNC1iMWVmMzcxN2NlZDciLCJpYXQiOjE3ODgxMTk4NzEsImV4cCI6MTc4ODEyMTY3MSwibmJmIjoxNzg4MTE5ODcxLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.H4_kzJzY9DUViuriIOzsffbTW993DPidwK1-GZ-hO-411zaTreYOTBrWVhVfMGyaYj7b9_xe0FDbdmvF4OVhk1ZPUkXgRgrVsZooTz3Yr8XghCtkENUnESI2dz0HnFIOnvtYCsa2QWGVbjEpf0wKT7OS3VUszjMwVhZG9dpBPHDDIovE6bFanAVwAdtU5ZbYd_8WLfU5uvNeEqBZ093ElZa1Y7DdglQgnBUCPFdXL428jPRlnwjneC_iyd4FzNHQ6aXXZkIewwS6aAU35TWp4B2cXrxil-uRBaA4olLjBb_6s7MTkiLgS7PFgeSXxopETsfQrjbjGhhx0r_j37YeR5QQKthNM-q8uO0jtjrG2feL6uxWJS-f3ZO7NRCF_Uw-hDXSMtm39e2Vtu6QLrygC98bRQVn9gpUpbs_FTn90xxeGcnBfJwOPEkNoCvRYS9IzTRDoKBWUTnL8eAJ0BsUP2zOn1MnPe4tlyvCsy5cb3nOji_dpzyA3CQBLqRP4xrg",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI2YTM0YTNhMS04MjdhLTRmNjktYmM2ZC00YTNkNThhNmRiMzUiLCJpYXQiOjE3ODgxMTk4NzEsImV4cCI6MTc4ODI5MjY3MSwibmJmIjoxNzg4MTE5ODcxLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.PQAh5PFQIYjP9O4q0ERMLoE9oGC_jTbiBDVbf94ewCFsMi0Qmifig9gOF_uQaTtchk_HN_dZeq6lwYP7oqBzExzUraiOBCd6GObh4sVlcGOauwpdJMTiZ5fBjD6pGVwBP5R6Afm1ooCBHT09AMaJSkLQ8c4OREcwBd7NJVtg0No05eHpv7RJo6rakOvAopouc8-V1SP7FBYLWJr8_mUlKsosftwTgcXRczsGY4dmPaqa5wvJflqVFRkSLp6UIEjhqbfSLmGhVs8zWP-TdH3Pwb0CskwEnDVnzjkeYFn-jJIdOUf68bkn4jypLleOk5YyHxy5oEXEnCB-aqPliNbBIJE2FH_OLJs6OybLCH_2PMmTkUvkFwCub_wZ5Nuhk0abRl4xg0omIEkqxL0qRk8grI_LUS_PuqrEHQV9JehInG4MeMIIqNt1eSsx-qETT5SE_OxAulQTCcuR60ZDDPvyvXm-C6PyvQSC9LBWKQmbM7L4E9WBMmF8n6gS2UGhYIfR"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:52,030] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119872029",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:52,548] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI3NGQ2NjAzNi1mOGYyLTQ0ZDAtYjBjNi04YTMzNmVhYmQ2NTAiLCJpYXQiOjE3ODgxMTk4NzIsImV4cCI6MTc4ODEyMTY3MiwibmJmIjoxNzg4MTE5ODcyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.ENlTkZ9OglbTelcq7H5tuREH6mwzMfysf1aHoOabfsPCRUcYtDMhrnucw46Pm7YgeCuqtSzdYK-S2lFOx6BNcqNwO_rGelO8vd4UCJIXLTeR1HZEx0PsDkWfUwoONHZpEOuJEJ_BA_rCcJVhJ7tLhdWDtQI4qs86ykK94hd7cc9MB3TRTUIdwsceiOp2VGaUihFD15b9GWLsxTyU-x14sKviqm3kcPJNMgY9-cyyTsWbp2dyQ22qY4lp1bQMEGuKGPkMGc8ryGLJ6LsI1KVK_0X5yOmimb3PQXhPqph9OBBoPKcW9lkcxU115CIQ37ka94Nf4lmVHA0s7yxU4wd9VNn-QTet-UvKGfyqsKlnfNK0mSsH8IDr9YLhHQAY0aHfoG0llp1x7k0Cb-oXuzC0ffRV9IVEXxa1ETiJYKo3-iFbzD8uq_iFWrS-QxDaCe49Qi_dF2IDyIlQsWf8EGKJZH_92PPGGA6mU-HWyEr3EAOoNj5zfjB2D8TyawgMCL5W",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIyMjA5MWUyZi1mNzBiLTQ1YTYtYWIyMC1iMTVkMGJmYWUzNDEiLCJpYXQiOjE3ODgxMTk4NzIsImV4cCI6MTc4ODI5MjY3MiwibmJmIjoxNzg4MTE5ODcyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.bsV0noZVo_lLJ6cGnhJEY17W7s_Pix0yGQ-_nxYQFyTxYoZ2U7h5u7c6k8z469tIHU_K2YioY-BuRWuXmrYhYIHxCCNO7435M05qWueawaSoH_sYUB5AnVLHAiwb_cYah5-QIPUZrsCz5jZoDd4Xrf5wARlD_0EF55ZZHXIrM5XZzSNOr2-tKJ-pYBc2ODM6r6OX-J4vwBuhZADOiRCTE7vaRWguLL14WyHYSuvn8C1mWGEHPUoZKJJCaQhujtkY3_hF0NRbwD4hAH2CRGYPV8kmAJRNpks5Tqfmu72q991fxEFX9EL3XWSjcGbG0ixtwNMD6U0f6_7N2GLWi5lPy19KlDmmlPmiyMgsMIgHfF1eeSfjysfGzzHYaNaAFn6_lh7tsRTC9iuwPZCPloHbp5fW9XIyqLjm5mK2P_K8g55V_M77AzBar7xjPVl5Mxc6XERT8XxGF-N2uaGc0PzhtD29IgG1K6Xg6loDUC33dcfAWMGeZ_O9H8PIJK-ZYcFY"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:53,144] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-App-Id": "crochetedly",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119873142",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:53,643] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJkZTE2NTU3Yi0wMTVmLTRkMzMtYTE4Yy1iNzQ0OTFmYjkzYmQiLCJpYXQiOjE3ODgxMTk4NzMsImV4cCI6MTc4ODEyMTY3MywibmJmIjoxNzg4MTE5ODczLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.B_TBkqQAWJkrAm2ZSFUjle5zZnue-bmB8wxHJa-r80FliJ3NgHi4K4LzsA9EbNDceFVSbfmcbxbb47l_NJsil9lCYgWEFISFbiHdZ6BTcCcfDJHhG6PU-qs2pTPAlMJaC4JQ8dYEuD14NqaAYqxGz67hrOh89jdKY8sdbN5qzgPRsfQkeTQTNAcfdcaP-UEckLaEktXQY4XyKFmE8GuHBYyxUUIKUAosryFsVs31xDt5m4wxtU6mgattjPN8NJS7sv3x7SFjKKcDOGSwrnfKKbBmPieZ-tvFnoQUaZW1uLkLe8GL80WB5xXuydbLL0MTiZ9Q3Mx4wzXfjoRY-XLJWCtSFtjl6NOuRfLE9l5d5t6wP68tiH_a-xvru478IfxY6X_vqdGW9oguO_qSXU5z9IlUARF77eZc_1f1usJwtAgodnArnCF0e2Tw1wATrsOpUx-dl-ERRDdTMc1jUS9fQxlTPP37JW85fUBMLu3yENHGYcLcosdoMXmpwj0cbCQo",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJkNzQ3OWI2NC0zNWJjLTRjNjYtYjc5Zi01YzQxZTEyYzQwMTAiLCJpYXQiOjE3ODgxMTk4NzMsImV4cCI6MTc4ODI5MjY3MywibmJmIjoxNzg4MTE5ODczLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.pYG-Kc1KGus8tbyWPVBpkhgjwfvK8obI6GrgEbAAOirdg2ayZcjQVTAWtUvxi5sq-pIXzVp2QaUizmiFwb2AZLBfhIlw_1HhhqOM3UAmZATO_6nn_SEMzb-oBEFjw5X0d1R3j2oGt6thHHkmfiZWncTfiubarDBMforg9XxLkGBUF0J3xGDDCN5TaDx74rccOWNFXJQIrvrMAo7_XIrAqiVM4iECNVBY3KPHfATPDShG_5vY7VHReSTTS8GnBSQZ4Q3vplXH-mibkRfn2pYcx7iYUkKnylAaJGmIyT638zw8Ah8H9b7p-EGIxRESFJdg3yEImwfRZkSFRyUctFK_P7edC1qaAXRgxsUYWZDIHBTj_aivBsC8O_v66NO58FSPe0tbYNLkuhnCM1BYTZXh5FJtVMIILWZrjW8ALzswkmD07q3JVtr6eIPqYbenW4IKl-E2wWfzBPDKzDM2wQjYyat02ZHJMQu2-oXmUyXPLu5NxhWH5aWpZLZ7mHOdWhCc"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:57:54,181] ERROR in app: Mapping exception to error response 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1156, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1137, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 10 per 1 hour
+[2026-08-30 13:57:54,182] ERROR in app: Exception on /generate [POST] 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1156, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1137, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 10 per 1 hour
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1249, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a ResponseDTO.
+[2026-08-30 13:57:54,182] ERROR in app: Mapping http InternalServerError exception class to error response 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1156, in _check_request_limit
+    raise e
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1153, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_limiter/_extension.py", line 1137, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 10 per 1 hour
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_cors/extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 1249, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a ResponseDTO.
+[2026-08-30 13:57:54,183] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "197"
+    },
+    "body": {
+        "code": 500,
+        "message": "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.",
+        "status": "ERROR"
+    }
+} 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:58:21,963] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "autherver_demo",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788119901961",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'autherver_demo', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 13:58:22,210] ERROR in app: Mapping http Unauthorized exception class to error response 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'autherver_demo', 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_pydantic/core.py", line 305, in wrapper
+    res = current_app.ensure_sync(func)(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/authserver/app.py", line 88, in generate_tokens
+    raise Unauthorized(description=f"User not authorized for client app '{g.consumer_id}'")
+werkzeug.exceptions.Unauthorized: 401 Unauthorized: User not authorized for client app 'autherver_demo'
+[2026-08-30 13:58:22,211] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "94",
+        "Access-Control-Allow-Origin": "*"
+    },
+    "body": {
+        "code": 401,
+        "message": "User not authorized for client app 'autherver_demo'",
+        "status": "ERROR"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'autherver_demo', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:28,690] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "autherver_demo",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120568687",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'autherver_demo', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:28,926] ERROR in app: Mapping http Unauthorized exception class to error response 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'autherver_demo', 'url': 'http://localhost:8011/generate'} 
+Traceback (most recent call last):
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/env/lib/python3.12/site-packages/flask_pydantic/core.py", line 305, in wrapper
+    res = current_app.ensure_sync(func)(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunter-buxton/dev/jwt-authorization-server/authserver/app.py", line 93, in generate_tokens
+    raise Unauthorized(description=f"User not authorized for client app '{g.consumer_id}'")
+werkzeug.exceptions.Unauthorized: 401 Unauthorized: User not authorized for client app 'autherver_demo'
+[2026-08-30 14:09:28,927] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "94",
+        "Access-Control-Allow-Origin": "*"
+    },
+    "body": {
+        "code": 401,
+        "message": "User not authorized for client app 'autherver_demo'",
+        "status": "ERROR"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'autherver_demo', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:42,955] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120582954",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:43,486] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI1ZWU5OTMwYi0xMTJmLTQ4ZjMtOWY0Yy1iNmViOTM5NjQ5ZmEiLCJpYXQiOjE3ODgxMjA1ODMsImV4cCI6MTc4ODEyMjM4MywibmJmIjoxNzg4MTIwNTgzLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.jz7SAoCC_eqIu4YzAY4kj6Z2gCAdEIZvR48E4EnAi4M59HTwAx_J35-39axGZPYtZBvuK0sY-G5MRaFEwkcglP5H6HACF_vCbUPw_DeswddOyqDwl_5k2GAGV5FjQBpddf3fwjBCFXzGvde8Fn1p-fqhpCAYH8OZgD--obJPC1d8o6-VHTCJBYEceJU4Iv-blXNGo5i2t58smlX13XfU4YJUk-5eWpTt8do-3UVB3KBFxMa5wSDsCC0PjEEGCsSaKDeN1ut-RGIBt5DMZqbGEzFJvgiLU8joQEQX-vFjt8vjwTfw_rf51dRrIc-7Z7tvYU6aAuRlzKS9z29X5YdU47y_CfgHf_sFo6XN3yU-ArkXrpg6YTuOBS1DKOh898qzJ-FBqcRy5IPzHvu-r5vBHfynRHXA2Bq6-GmHdWV-xYRmO2SHqY4m_FboJ45Pe8LukM01DpvZx1WtDW2YFYKK9L4zA_eZey3QPiufJi4A2kb6ovzUPxBoyV2yUY30fJXN",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI1ZTJjZDgxOC01ZjUyLTQ5OTMtOGYyNi0yMmViYjNmNWEwMWIiLCJpYXQiOjE3ODgxMjA1ODMsImV4cCI6MTc4ODI5MzM4MywibmJmIjoxNzg4MTIwNTgzLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.C3S7GfiMW2Rk6-oGnKS5hs1IWYnJ5aaSLfBjpbnlZLkFas6_xWkj2nF5HnJYdMCC0k-3Gwje3oG8hMIUlfewBO2_VYdRmRhsCSLIm-Vpb2_oBN_8-d0DORG2cSduSnozarhJI6zVmB-C8IHmPcWtxu7izq_dUOYDsbyp7bqXPZRNZDv77mdxRKWGd6AmOciACmIf43wWEA4uGRrYa_PN8TnH4hwp2pKCkBM1R-ekh0CiY3FqrqXuFFaRPtpS9FkpeYpDNdgnhL6XOev6driufXu-BSKnUKuU8gHyK_fL9NYBvD2-AgDEvxg2uDUn3qIWdRMN3VT1QBzY57PW7QbT4oEZB9l5lqBMmEb4VjxokFkSEJ02PiQt6cfDCAjohW-iFgdeDVzsuwdRKLePYYxcfpWgWDabRWgkygfqv2MvtFfr42x16v6Q-altwhnZ5U8iV5D4MYk8QaXEBWFQzVfPrDorviKhr6X1hEAfxkE-WfeYSnf50TkaAbEz0zOHIgfB"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:45,613] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120585611",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:46,116] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJiMmRhM2I4NC03ZTM2LTRkODAtYTRjYS1lNWMzOGU2MDdhYjEiLCJpYXQiOjE3ODgxMjA1ODUsImV4cCI6MTc4ODEyMjM4NSwibmJmIjoxNzg4MTIwNTg1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.VTBs9s1oDMZ3-lv8MM8ZyJqLyNABdPXuWxi870cGYYyn09Tzk1HkUTZDsJjP26rdaBqscmJ4QqE6gTNDXQgreEtiZvrxtWggFacWdlowcfvtXVai6pxv7JQnPd1QHaA1nIKSGK90HxGtcudNU0GS8CI5Ls8IKnISY8Lr2g-1WtXJcyvlfAWjnAqGdkzGPl99-UmMYhA6jaFFhNuloWTHJ-_v9sObPg5y4QXvmPi-8zKpsWJ2XMhV0rOPop8rYDl36TFYDo6d28AsX3WzuLJ4MmJnFGvp_ENVrmaNuU6naaYCPIx1oHwlkNhyToDL4m5LUOxOzdVsxI6nnKrFNKxd8oxzabZdggPcWY1b5LcLqf8erkIJ3E4pb-rX5rUJgtSxJdhbwGgq2XhszsG_V9Z5C0RhmlA_f4Q3RIsrpFGZY8hyqUeAr-5-EziiXPgRQrWezHmsIpuZsYA4-A4ZI7xFZTf0CY1q3a_mdG64mYvyIKjdBvs50vUL235AyqrMGSwv",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJhOGJlNTNiNi00YzliLTQ2NjItOTlhYi1mMGE5YjZiZWViYmMiLCJpYXQiOjE3ODgxMjA1ODUsImV4cCI6MTc4ODI5MzM4NSwibmJmIjoxNzg4MTIwNTg1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.jAJm3Ho93T_RLalfd-0-R66gfbuaPWw-0ocjgDvZ0Jx1cbId8emOglWiTgLYcYsBnKkszm6vKlLS3-FkNyCh7Fjd9qDrh-LPGbKrEJP6DmrJEgZ0nR8kheoIVyUUWqXjAVuH_Xaw7YIMS9SivvfcrhleFXeeRXnsCglELSzf6eEiJBMWYnYW_NubBrxZ1M_EFf2Ow6HKg8l1qis1ORD0dChf8WHSf_hDuM9pkl1NrCIGURguMGXncEOdEnAOVfbhoYhvpy5oSV1lYRBmdwe97jIYlRgoLq7Xv-LhbIMNQHJtzgRRn-bAX_xH3Pt9k4IyBHHe1S_sj9ye8jHypw2I2sEP5bDu8JTCxoRL_IEnHhx1EnlB3Avim25t0eY4UTQqwMVrQawy3esJfdqapWpB8F3ibw6v2HUIgN9L_6zBfwaxqvrrVekWFKu78Pd7DGzEyyclzbqmS5a_jMP8wO-VLhrJa0ouW3QmqL_Brt2vK253x-22do1odsUnQuJ799xM"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:46,979] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120586978",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:47,459] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIxZjBjZTg0Yy02OTU3LTRiMjAtODc4MC04Njc3ODg1M2QxYTIiLCJpYXQiOjE3ODgxMjA1ODcsImV4cCI6MTc4ODEyMjM4NywibmJmIjoxNzg4MTIwNTg3LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Haeq9C1XPrVGiXPR6R3bVftdRFB2jFU504KQZy9l_T9jsyhSvZCZAZQ_e5844UF1tYpeJHPjR6-sjOVm3QGVlooL7dsHuvep9Udfdy-kQo1KZlF0CtLDO2A3yWGhbnWwoZM9QuIjvRuVcsU-c4xtingTBgn4ffpxbtV3AFCFfnMMFnUkFCMfrgBALM5WQNVbDs_eRYy4-OzJF-IMJATUyaS1cSowIwZzEYP8xAtzceH6y8XUDFR4X1nfQdDw30pTDAkiOB7wDVCjXU-UbEIbi-89ppXn2X2mwUsnJcAbUFJ2TpqH1qdiYEhTi1zxLZTZq0gnFNFa_tVxND7P2rXg7rkDEvodLKxX7B7xPUcogDsrarPVGzQ-Gqn2k4gz9w8rJg4ldNCryZAF32YfZnRaKj5IyBfkHG98XUnNHgmYJn15cqXtYMLL4QsuMeS_d2x7CC5RP2CJ7vFpZn1uWhXP_NW74ul_pFrUvH5zAlx14xeuAztNq34sBfjQjDEvB3Ik",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIxN2JmYTZiZS1jYjY3LTQ1YWEtODczNi1kZmNhYTcyZDg5YWYiLCJpYXQiOjE3ODgxMjA1ODcsImV4cCI6MTc4ODI5MzM4NywibmJmIjoxNzg4MTIwNTg3LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Qd2yF4n4GFKuXNhWpJCT4qRoB8p6b7U_qGESlNhYlRxU3U1ks539MXoy-588mzk64Gn94eCuFQk6O8kWz7A4PQq_5erd-J2qjJfPHm0Lzdo-nDfztpyynGcPQkwUiFSmuReubl-jtZE1SUZtJW0Us7WBzy9GKxfStGDgeFGzLOpop3j9uHMvzilkOxLu_Yy3Ywk9jj_ws4fzS1J3ljqPmD_pOflcZstTNZs_CWw_UKyDqt5mAO_0i-bu6e_tI09CkOhe-GX6PLqwlisB21n0NeVIgP2Cl2Ki9aX7R1bbgCrqioti2KDV7N8melZnstz-giYRk95G4l4f20FcmNmVpxVus1yW_fEOWL8ZO5rynUQy3MUp4ANL8R3dvs19_7EFdanX281Amms6yAYu1i9cSNq1OUziKhuopSfbL3mrh8wMA9IgIFRhHez4mB4Q1r4tO8A6vdWVB1T1KApdW0OoRSiud5v303fSrKxSRTizDI1-0RIg_mfijh4rwulFEbEK"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:48,473] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120588471",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:49,021] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJkZDQxNzE5My05ODYyLTQ5MDEtOTU2My0zOTlkMzY1Zjc4NGUiLCJpYXQiOjE3ODgxMjA1ODgsImV4cCI6MTc4ODEyMjM4OCwibmJmIjoxNzg4MTIwNTg4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.oT5QLkClRTBvd5-H54d8nrdetRXS4vvvcddJH9Px_4pDRttrb5b1Oz-CqLkDvVvD2H-Pxt2g8KZ2e7SFU0aAV0Ybo53nO6HFUp9DyXKXERJT42ZxhdL3dj0Hq9Bggb2M0voqqExQ9tkvz4FmVaxxAExo03woW3jMCaVSeNJkwYMGhd0DBxH2xR5EVwbZi80fqJWVTdzcFTuvaaDsMvpyjyB8bfxA0S_HfLgKgJYV7xQZG74cZogJHYVAbQBWYwXHO6Zf0F1q0dbooDhjUcS_NgIjLCJWnvvxPVqsrnzPUC3AihH2GwOmv31fgypeT6IWPi9sP34eh1gEyDSMehhFA4jSC3rCaRNmNLMI_Ue-R2vQFdGTcO6OuEGEGxVYO8TlTh47pPsH62C1PSXqB4Ixg_zd6feX7Hd_yJiem86ZMGB2EwOwbIGYTug2UXdMHJjip5I2UDjLzp33K8_jDJsoxO0nAs7C9mYF7-VLTDocWxGGXMc76CdvQecjLENOj6tU",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJiYzZmNTdlYS0yZGVlLTQ2M2YtOWFkNy00NTQ5YzM1NTEwODkiLCJpYXQiOjE3ODgxMjA1ODgsImV4cCI6MTc4ODI5MzM4OCwibmJmIjoxNzg4MTIwNTg4LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.f57E91BE_4WsX7aGTkFyAmnBIqmvVXyfoopo8lyd_5Px1g6Vqdo1-ZaRtnuhcfWgl-kdefe3sc5qjd07f0rBU35odtAz0fItBReh9sxhhEYhUY5KeDb5amSFE93aRdUDSiJaG9tnDPPnJacdBH_B2rNTfGcOFmB9emZo7Y-_uXG9jjv4P07bHVfStOMSj7MN617SP4buqQj_W5ZLOfLBmTfIEhDbfyUmpLMSSOetz1XfhUTOrocamssetwnpKmz9sIkSr3w2j9BbIq5858Avkndh66ogf8rN1HCwFAUwCQ0Urk1ndOpSZ-32eOUbBwW5rUkhKORrzCeY0OwNU1JdvC_5VJNzRZSB6Il2cSvAE-WUG8O6Bu4XQmbPvuaqSMQE4ePu0VvEDE7XV4mopT_1N7cTDde7OV2axWLWejtHtjkYULfKO15fzTrYDnXzvLbuT21g22hKt6pgtXz9TyYPaWKxAyIFRHf1pQXU4yMcWcIc2_EJHEAAfW8o4eDk6gFD"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:49,849] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120589846",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:50,379] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIwZjhlNTNmZS1lZjMxLTQ1YzYtODVlMC0zZWQ2MmNlYTQ1MzQiLCJpYXQiOjE3ODgxMjA1OTAsImV4cCI6MTc4ODEyMjM5MCwibmJmIjoxNzg4MTIwNTkwLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.LXWKZx80hMEgKBqLIA0lpKf-wdYmth9XHfTFqVi0rt_onimfFREwuu1LSe86E3ndqobO6Wg3Fv_uHiCm0FKaWvUkzY9Kvz2Rm-FBR2eCjrSc8DtOJs3D9zueKWHzsJXHQkuvekY1XcZejcXiFVcMkvJmFBXcknHwPyaJ5LIqFLHtk4ILRw6ZeBy9skGnYCICjKZtB5ro9hfO7x7o-gULsNYufcgiUvKreX0bmwkSNyvdWjJyloA10hY6sIap5iqHzY9O7dYYuz7n5UujtOTUQl79L3aDzMKyjlFu2lzTaeswMHfJqK7ncgz_L7bhoeQ59PZWQ97OJ_a1Aq9l2xGwSmV8hUvDNN34qNSoSCuBinhhpbXIZmWqFIp1QIP5FpIs2by4NNNc1UWUQOCJmk95EJvQ1KtOiCSSbjFOcPKOmhFr2zTs8bsfifVBYLPY0Iej0LstT-lF8aLoZnpTTUISCDxFlFW8LaatYcgJ7eYVleOf2nry5hfjqJABzhreXExw",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJmNGQyNDQ5Yi03OTg1LTQxZjUtYTkyNi0zMTc4YzY4ZjM2MDYiLCJpYXQiOjE3ODgxMjA1OTAsImV4cCI6MTc4ODI5MzM5MCwibmJmIjoxNzg4MTIwNTkwLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.nDXvrdryV710FF52Xzh84r-wkD4wTJsaeECPbJiNqEuFGBVa8Drt0tT-V2I-DItDlU1KU2bIRHacFC_6FpD05bI1jX19fN5C2P77epHOY6vekm_s_tp3Ldyj15Oq0bWFt3k89mRAwATMhF-9ghBv2G-7EKmg9n-V72TYe2IPWW0kuOdDKZcIAmoXr1nkMcXZpGcrwYwjc7TnvTEpad466iQKymDQ05admtZi48-6ZPSRj6DECWuwvfSX2s8guPZFTJ_PTg79suy8GbnPmzxq2r8JVD7NxToWCtrCgky_G0uuXu_D7E0PxLwwTNsZEI520nukimmo6sz1XyFL1WxqWyvjrsuaLF-2LINIDdxuKN-_UewS_tVhLkYXDhzGiklVFIEUGuvDjSTk1ind6m3oXTxlq0AO6yxJrIbIvl92JYVGUB7rsf8na6Zh8q3-V_7savoBi7rLI9QxqAMqflELOH5kTVpsG4YIQllXjhXj3-WM9GQNQvRdHiC84AZ2gKj5"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:51,024] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120591023",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:51,533] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIwNTJkOWY0Yi01MzFhLTQxMWMtOGQxNi1kNDE5YzM3ZWNmYzAiLCJpYXQiOjE3ODgxMjA1OTEsImV4cCI6MTc4ODEyMjM5MSwibmJmIjoxNzg4MTIwNTkxLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.m7CdaS0_liH8ATo6Q_wZQRcMQVSmcZzAb2winiS3yRFd2RtFYA7jMrMLV4KLq52DCW7PHtnR2r2ecaKguknS8nYMiNJUjHACMetSfeqO8VxtkzPyOHZaS4tdWfHxxg1rF_PKtVGcPkr_KYtGQbcHlGFnV6ToW5Cu6O29fS-OvO20AH2CH-HFPxUl-eWlLwtWzZiV83srR0388G21P23TwHWrjh-tz4wnp3sLXEBVrDgNnNg_Hxw3eU5jOJevj20Y19u_LRa8lEecfljS3mZOhFxW9VytQtWgCQxAG4bRSuN78UbsI9kb3jBSkcQDsgZucugCIqksCIu3bCNFYx2G1eZnZr7KaTAvZv_1QEJYi9G3TUqRnud1VIhf7NZO5IyC2s5n1O_q5b-2zj46qKXdQfrjO0Wq6WxrbLXzzybxBsbZUx3XQ_q0xYO3fqGQbRkPx6LH4U1gIU70Tc36JedrPrkoeRuDNwVpp-DALa_0KnX1CldJWZkFWbqA3MCqwmtM",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJkOGQ3OGJhYS1mMGFkLTQzMTktOWEzYS1hY2UxNjA5ZWUzZTYiLCJpYXQiOjE3ODgxMjA1OTEsImV4cCI6MTc4ODI5MzM5MSwibmJmIjoxNzg4MTIwNTkxLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.XHk9YxHWwqmsy6BZAYqQPvlfBoPs9HRoYCdc-PI9TpTA7kfVOMg-PTeqEm4zE7Klk5-f4VpmIpkG1Hrxc6bUCsT7Z7d8-EMDhT-zqUGy5euWfMRf1zWOvFvPwm-o7Uhef_MXo9Sc2cDLDhLS9mK4DzNzcUPYrdMA1QhXbW6tYDzf2uZJUj9s1HE9V7MXp3d4fvAXOAxgHLQHLGzUuZ-ePo40DJMI61KcGZQgoqeXH8UDuzxPtpdGZc6lqUy4McJ2dT-EG2FE1dJwff1NcCUnerHI9XBJeGmY1BmF7zQyyyLKk6SJE7ds-w8idftJoA8H86XFU5qon3rR5reQ9Zv1pegtRnyq0bWvvoTpzOq_o39DW9x-ui5TfpUqRQg1Oi_W9Dts8-Ju2gHBKSus7Uf9MO_9BQ6vA3MvSOCZ4cokVE4FPmBhfUcBmw_HNiA35AZhXj-GSCeEk8IJYt8Xy976is6KeNOy6jdN3hYlC52PABV5ELGS32IXj9iWbCFFpmOy"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:52,330] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120592328",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:52,887] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI0NjMwYTc0MS0zMWFjLTRmZTYtODI1OS1hMDMwOWMwMDRkYjkiLCJpYXQiOjE3ODgxMjA1OTIsImV4cCI6MTc4ODEyMjM5MiwibmJmIjoxNzg4MTIwNTkyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.iD4ybZ4U38EQ46yZ3BpM1hVzHqnoB-itJcq1vS9ZhdfF2kiNPc3OkufWMz5iB_u6-BxkqmEIG2IDyDv8qRgW9PqLOw8UsQ_-KmuWzljpDbk8wFcig7CMdpabj2PVmy6gilXOWlnWojYx88IbHOtXWj14cWpeU6CeikU0zrXFs4uRKZepd5cx8rBa9Xwx5lwH-BCMdblN9E565hKK3vNXq3yAO-l2huvp_bdRYeF0yjKlEUmNAtD4sHNCNSHerR1KPdg_WYW6jMStBR7hBGoSUnAhEJ8Ig1sCyItzPwLfIFi8fOhFPLGlEsrsPpIQBWn3Fl7J6IBk8L8L6x_5SmKY1sVA0I-y67jiD_P57a2O-J--hQarK_lqf5fZklnbb7FE1RFxl67awnqqcFMYNOf0AlcBbpnSfAmLWp-PxmPOa_6Lh-cxzAC-GjRChWRgzBHI7yEtzLwxZ8iB8u7iBSV7J8PTnK44L-Y85bUaa_mPJafpXIIriNgRbmSQDF1VE9kY",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIzNTJjOTkwYS1hNGVmLTQ4YWMtOGMyMi1lNmI1MWY5ZWFkMmIiLCJpYXQiOjE3ODgxMjA1OTIsImV4cCI6MTc4ODI5MzM5MiwibmJmIjoxNzg4MTIwNTkyLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.PZwrgxgOyuOaRm-ZStR9NDJg_gfANqqp1QV3Svoe6bkOe4mmNTLFR2Gm34IIit2NlK95Cuh3mMZ1jjntf8NSlOtGQX7b9DkoB5PpERu_AGp8QolnV9jg_HVD9PPdpiOUNtSLfsHGVCQCiXcEYWjGJcBJDvf_Klq1T7JZc9zHdqHtNscxQ7NbDb0UbQBZjVWGrQB-DNmdsWZWdECZrjbtapVGHqtNSllOBA4u-hIBaz_ZSfUEa7JZvOIBm3H5ugUyoUU9REJp6V6nVmJ0Kjec7B3Q15Hp96fB9AwM97GK1e3vp5M3A3rgsMVmyp8WC7ec4xVZCr2R331EtYK8No6i9vvbCLRbAar-IWIDc34DrhrnbbrRCCx3I5CSjGwIiI5pzelx81XQR-E4FZqRd0WceF_FpwkDS09xEgdvCUj36iKwJzYDv-4oOIdzIrBMdX6m3ORwJ9NfPfO6NW2F0Z-lHVH1JJJWr_4dK0UqVb0-S8Sll8w0XzGH-q13gDelBJVx"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:53,695] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120593694",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:54,195] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiJmZGQ0MzUxOS05MjNiLTQzZDgtYjc3OS00MWJmZGZjZjE4ZTEiLCJpYXQiOjE3ODgxMjA1OTMsImV4cCI6MTc4ODEyMjM5MywibmJmIjoxNzg4MTIwNTkzLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.Gju97-QCRxD8M8Kt_Zn-t8Fv8UREiSHTcoKXdQzv3eKWdjCRN6mnA550CIsXbROTNIPp5bs9Xw5dMKx910M-n96yau4bVCoH14k6AmGCxHCLJ_ptX7dDx3jt67Nis_OkH75khaOBaCzphjZXTTwjzk1_c-BfwlY_N4JP1F26IBt6_i5fkc4_dFJ5RvF6yEIiViuiP1c4bC_OOqONVQ5dtJ690WYnhGNsvV79komlrAFWEHfn9nD3BAg86R-QV4iZnU8OebwQMoBOleeEGA_GlzWahjvctOJMXDl1-xs1pgPqOjYIGqEWroiqffAophd00a7FsBbhvAL1suL9qi-QvzsrA1dawq6uVXuThehiw9biTweuOfqZGHEgfSeoO_VbvMYT3rmVS_usALxj5oL6MPGBBLk2_ZC0P7RLYg4-G50PzUH8sfy16Of6NomDs1tBJHmyaMW6O-RBgruC9U6hgilZjNeOVg4inGFX31HDEo3Tb546EGbpRWMeUaawkKcu",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI3ZGExY2E3MC03OGYwLTRmMDktOTM2My05YjQ0NmVkYzhmMTAiLCJpYXQiOjE3ODgxMjA1OTMsImV4cCI6MTc4ODI5MzM5MywibmJmIjoxNzg4MTIwNTkzLCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.NS9taVpNbzigtWxSwCjyLu1ud4OSwpb9N2NrY-i5vnyNMp7u3HvkCxPl5uRzeIxSZO7bmMr59Ln-xQRuxBFy0spRmCYxa_UX6l_JLT1uXUZOuU5eVaQ05vMhMNkX-hHGX6QaOv570aJQVrBVrrf63F5CwXLD0Y6I36JG-phEgGs-JniOP8a0cAA5_xMoRxnESu9b0QFSn5L7HE0K8xBgasLyyh08uxU2svs8Fzn-ljQ-SRRDMdp0AgneImsUxqXvOfubSl97Kwkm1JZcnaxzqU1pWdeNcf43oM_pg3UI17AedpDFKSzpgbH7GHvQ-4dEu-KYVV0ockszHCP4oAVHcOiQlwL-ie6Tidw7NlAyiBGCRQsxXnlqBcprh6a_9LZX40EoYW7bJpea1MMrHw237INSwpdeiCPMSDR5Ca0fJNVsvEUJe5hQwUT-cvfZOBcXwmQ07s9pHchVBG9lkm__v0OYWZ1F7barjll-gB-jdU87yJ5tsqm3K8gixh-agISa"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:54,935] INFO in app: REQUEST RECIEVED: {
+    "path": "/generate",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        "User-Agent": "bruno-runtime/4.1.0",
+        "Hbns-Trace-Id": "trackingtest-generate",
+        "Hbns-App-Id": "crochetedly",
+        "Authorization": "Basic dG9vdGxlczpzbWVsbG15ZmFydHM2OQ==",
+        "Request-Start-Time": "1788120594933",
+        "Content-Length": "184",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Host": "localhost:8011",
+        "Connection": "keep-alive"
+    },
+    "body": {
+        "aud": [
+            "projectservice",
+            "crochetedly"
+        ],
+        "projects": [
+            "crochetedly"
+        ],
+        "custom_claims": {
+            "fooNum": 123,
+            "fooStr": "blah"
+        }
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:55,418] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1785"
+    },
+    "body": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiIyYWVkNjU2Mi00ZjE2LTQyMGEtOGY3Mi0xMzNlMDRmMDk1YjUiLCJpYXQiOjE3ODgxMjA1OTUsImV4cCI6MTc4ODEyMjM5NSwibmJmIjoxNzg4MTIwNTk1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.JngMgKppZHApNf8rGZSj6LZXzSFhvPDIjqG6hMC1PyHeWXdAsQfzU4cNbTfOWdv4AKZsuzZ6UDXXzIox_CsA3QCQMZTYwN5JWYyqrvR14NLFgAaRvBmdqObptuuohtdVfmhC4sdOPNPo7B8NNHCOYdCmsuRf0P-4zCd4_6ocb9SvDkJsL91tAtcz3clzyrbBoAnCaZFilUcac6Z21vbrFPSKUYB_OeMubS7abqRoj3zSj6s_Jvmk8e8RTpy_DilfzkQX2JkgJebdkYucKZBj4dv2jlRonKKIDRQNXAA_fwzICqPViyeDjH2kKKLAc2iQ826RlQDvN5GHsyPcKn82vSuiS-lNopqHORqfHpNmLs0af53_b4rDa4izLrhapI9m8R9Febs0AxeIKqaPRELZYDibyxPue0TfDQe-35owANyE0xvGyZFFp28TazcypNXs1t9aqkHuDinOt85B_yZ3r8os2FflJ7qHJAzJ8V0YlouROWtV9y8eXUWf3JwPgpdd",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b290bGVzIiwiYXVkIjpbInByb2plY3RzZXJ2aWNlIiwiY3JvY2hldGVkbHkiXSwiaXNzIjoiYXV0aHNlcnZpY2UiLCJqdGkiOiI1N2Q5ODk2MC1iMWUwLTRjMGUtOTVhZS1iMzYyMGU0MTcwYmIiLCJpYXQiOjE3ODgxMjA1OTUsImV4cCI6MTc4ODI5MzM5NSwibmJmIjoxNzg4MTIwNTk1LCJwcm9qZWN0cyI6WyJjcm9jaGV0ZWRseSJdLCJhZG1pbiI6ZmFsc2UsImZvb051bSI6MTIzLCJmb29TdHIiOiJibGFoIn0.SMKucNP5UEja2sLZcBWvYr4iJo-1wkF4P9I-6ccEXI2BKRA2SgrdSE4u8BdmfJrH6CNPnKAqPGxhAXR5BkrP6XxSdO77KYKSAiD2LxLCpfNhHgPy8wlvcVXFqg8rAwKchwiBhoUUK3U8A7LcFY6KOibgGq4QKLFtZyYlQ4upQ09oWK69TsnFZOua69EBhMJD1qqrfXGGM9bMBpZNRExQnlTkaSMgqW7Kg0L1ygPcav5r3IPRNzoPPxPgrzK4NjOI9jCKFiDNNHVfhuBXIPQma_n0oAzLEHvhPUJf2UEQbyzo32voae54L2V8NltNuouorO5oEvb4dZ70Ax3q4MDOYIljwPkTZriOdgWL6keWpg0rjIFCS87fqD70vrlt74F6h17Dg0LxttvIQ2Qx434zt849Wfe5pqBMxNXfpWoae5LjYkYRD_AeQ2C-BRhZIyC7cUOBfuS6TnWcbqC8DKSIOFgZfnWRWXEb-but2MjTXwi1MAHoUii6CpHc29axqjsU"
+    }
+} 
+ request_data = {'trace_id': 'trackingtest-generate', 'consumer_id': 'crochetedly', 'url': 'http://localhost:8011/generate'} 
+[2026-08-30 14:09:56,119] INFO in app: RESPONSE SENT: {
+    "path": "/generate",
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "77",
+        "Access-Control-Allow-Origin": "*"
+    },
+    "body": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded: 10 per 1 hour"
+    }
+} 
+ request_data = {'trace_id': None, 'consumer_id': None, 'url': 'http://localhost:8011/generate'} 

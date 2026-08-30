@@ -11,10 +11,24 @@ from datetime import timedelta, timezone
 import datetime 
 import jwt 
 import json 
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
 
 app = Flask(__name__)
 CORS(app)
- 
+
+def header_key_func(): 
+    return request.headers.get("HBNS-APP-ID", "anonymous")
+
+limiter = Limiter(
+    key_func=get_remote_address,# Identifies clients by their IP address
+    app=app,
+    storage_uri="redis://localhost:6379/0", # Your Redis connection string
+    default_limits=["200 per day", "50 per hour"], # Global limits applied to all routes
+    headers_enabled=True # Automatically adds X-RateLimit headers to responses
+)
+
 app.config.from_object('authserver.config.DevelopmentConfig')
  
 setup_logger(app.logger)
@@ -52,6 +66,13 @@ def handle_unauthorized_exc(e):
     app.logger.error(f"Mapping http {type(e).__name__ } exception class to error response", exc_info=True)
     return ResponseDTO.from_httpexception(e).model_dump(), e.code 
     # return { "description": e.description, "code": e.code }, e.code  
+
+@app.errorhandler(429)
+def ratelimit_handler(e):
+    return jsonify({
+        "error": "Too Many Requests",
+        "message": f"Rate limit exceeded: {e.description}"
+    }), 429
 
 @app.errorhandler(Exception)
 def fallback_exception_handler(e):
