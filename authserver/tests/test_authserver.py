@@ -1,11 +1,16 @@
 import pytest 
 from authserver.app import app 
 from werkzeug.utils import import_string
+from authserver.config import appconfig, load_public_key, load_private_key # ConfigEnv, AppConfig
+import os 
+
 
 @pytest.fixture
 def client():    
     app.config['TESTING'] = True  # Enable testing mode
     app.config.from_object(import_string('authserver.config.TestingConfig')())
+    app.config['PRIVATE_KEY'] = load_private_key(os.environ.get('PRIVATE_KEY_FILE')) 
+    app.config['PUBLIC_KEY'] =  load_public_key(os.environ.get('PUBLIC_KEY_FILE'))
     with app.test_client() as client:
         yield client
 
