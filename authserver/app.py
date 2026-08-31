@@ -4,6 +4,7 @@ from flask_pydantic import validate
 from authserver.model import GenerateJWTRequest, AuthJwts, ResponseDTO, ResponseStatus
 from werkzeug.exceptions import BadRequest, Unauthorized, InternalServerError, Forbidden, NotFound, UnsupportedMediaType
 import authserver.header_util as header_util  
+from authserver.header_util import authenticate_bearer
 import authserver.db as db 
 import uuid
 from authserver.log import setup_logger
@@ -12,22 +13,24 @@ import datetime
 import jwt 
 import json 
 from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
-
+from flask_limiter.util import get_remote_address 
+from werkzeug.utils import import_string
 
 app = Flask(__name__)
 CORS(app)
+
+
+app.config.from_object(import_string('authserver.config.DevelopmentConfig')())
 
 limiter = Limiter(
     key_func=get_remote_address,# Identifies clients by their IP address
     app=app,
     storage_uri="redis://localhost:6379/0", 
-    default_limits=["200 per day", "10 per hour"], # Global limits applied to all routes
+    default_limits=["200 per day", f"{app.config['REQ_PER_HOUR_LIMIT']} per hour"], # Global limits applied to all routes
     headers_enabled=True  
 )
 
-app.config.from_object('authserver.config.DevelopmentConfig')
- 
+
 setup_logger(app.logger)
 
 @app.before_request
@@ -59,7 +62,7 @@ def logAfterRequest(response: Response) -> Response:
 @app.errorhandler(Unauthorized)
 @app.errorhandler(BadRequest)
 @app.errorhandler(InternalServerError)
-def handle_unauthorized_exc(e):
+def handle_httpexception(e):
     app.logger.error(f"Mapping http {type(e).__name__ } exception class to error response", exc_info=True)
     return ResponseDTO.from_httpexception(e).model_dump(), e.code  
 
@@ -145,6 +148,7 @@ def refresh_tokens():
     db.update_used_refresh_token(g.token)
 
     updated_claims = g.token_payload.copy()
+    app.logger.debug(f"{updated_claims=}")
     updated_claims['iat'] = g.auth_ts
     updated_claims['exp'] = g.auth_ts + timedelta(minutes=app.config['ACCESS_TIMEOUT'])
     updated_claims['nbf'] = g.auth_ts

@@ -13,10 +13,10 @@ setup_logger(logger)
 def connect_db(context_msg=None): 
     try:
         conn = psycopg2.connect(dbname=current_app.config['DB_NAME'],
-                                            user=current_app.config['DB_USER'],
-                                            password=current_app.config['DB_PASSWORD'],
-                                            host=current_app.config['DB_HOST'],
-                                            port=current_app.config['DB_PORT'])
+                                    user=current_app.config['DB_USER'],
+                                    password=current_app.config['DB_PASSWORD'],
+                                    host=current_app.config['DB_HOST'],
+                                    port=current_app.config['DB_PORT'])
         yield conn
         conn.commit()
     except psycopg2.Error as e: 
