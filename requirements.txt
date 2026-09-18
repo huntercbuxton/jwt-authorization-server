@@ -16,3 +16,6 @@ flasgger
 flask-restful
 Flask-Limiter 
 redis
+pydantic_settings
+requests 
+pyyaml

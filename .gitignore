@@ -50,3 +50,4 @@ askpass.sh
 
 # Other
 .DS_Store
+*.log
