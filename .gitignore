@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Flask-specific files
+instance/
+.webassets-cache
+
+# Environments & Secrets
+.env
+.flaskenv
+*.secret
+
+# Database files (if using SQLite)
+*.sqlite3
+*.db
+
+# Testing and Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build and Distribution artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE and Editor configurations
+*.code-workspace
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Security-related files
+askpass.sh
+.pgpass
+.pgpass_prod
+
+# Other
+.DS_Store
