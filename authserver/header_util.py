@@ -1,7 +1,7 @@
 
 from functools import wraps
-from werkzeug.exceptions import BadRequest, Forbidden, Unauthorized, UnsupportedMediaType
-from flask import Flask, request, abort, g, current_app
+from werkzeug.exceptions import BadRequest, Unauthorized
+from flask import request, abort, g, current_app
 import re
 import base64 
 from jwt import DecodeError, ExpiredSignatureError, InvalidTokenError

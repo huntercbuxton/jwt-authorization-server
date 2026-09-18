@@ -1,0 +1,21 @@
+config_server_url: https://configserver.api.dev.huntercbuxton.com
+config_server_source: authserver
+config_server_profile: default 
+claims_issuer: 'authserver'
+db:
+  name: hbns_aim
+  port: 5432
+  host: http://localhost
+  # user: 
+  # password:
+private_key_path: /home/hunter-buxton/.ssh/authserver
+public_key_path: /home/hunter-buxton/.ssh/authserver.pub
+signing_aligo: RS256
+consumer_whitelist:
+  - crochetedly
+  - moogys_website
+  - ANGRBE
+audience_whitelist: 
+  - projectservice
+  - webconfig
+

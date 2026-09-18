@@ -1,5 +1,5 @@
 import logging
-from flask import  request, g
+from flask import request, g
 from logging.handlers import RotatingFileHandler
 import os
  

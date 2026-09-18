@@ -1,6 +1,6 @@
 from flask import current_app, g, request
 import psycopg2
-from psycopg2.extras import DictCursor 
+from psycopg2.extras import DictCursor
 from authserver.exceptions import AppError
 from contextlib import contextmanager
 from authserver.log import setup_logger

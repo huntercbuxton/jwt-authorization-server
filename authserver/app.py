@@ -15,7 +15,7 @@ import json
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address 
 from werkzeug.utils import import_string 
-from authserver.config import appconfig, load_public_key, load_private_key # ConfigEnv, AppConfig
+from authserver.config import appconfig, load_public_key, load_private_key
 
 app = Flask(__name__)
 CORS(app)
@@ -25,8 +25,8 @@ setup_logger(app.logger)
 
  
 app.config.from_object(appconfig)
-app.config['PRIVATE_KEY'] = load_private_key(appconfig.PRIVATE_KEY_PATH)
-app.config['PUBLIC_KEY'] = load_public_key(appconfig.PUBLIC_KEY_PATH)
+app.config['PRIVATE_KEY'] = load_private_key(app.config['PRIVATE_KEY_PATH']) 
+app.config['PUBLIC_KEY'] = load_public_key(app.config['PUBLIC_KEY_PATH'])  
 app.logger.info(f"{appconfig=}")
 app.logger.info(f"{app.config=}")
  
