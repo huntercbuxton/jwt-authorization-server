@@ -23,7 +23,7 @@ CORS(app)
 
 setup_logger(app.logger)
 
- 
+# this is a comment
 app.config.from_object(appconfig)
 app.config['PRIVATE_KEY'] = load_private_key(app.config['PRIVATE_KEY_PATH']) 
 app.config['PUBLIC_KEY'] = load_public_key(app.config['PUBLIC_KEY_PATH'])  
